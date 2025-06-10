@@ -9,42 +9,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- THEME TOGGLE (DARK/LIGHT MODE) ---
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
-    const html = document.documentElement;
-
-    // Set initial theme based on localStorage or system preference
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
+    if (localStorage.getItem('theme') === 'light') {
         body.classList.add('light-mode');
         themeToggle.checked = true;
-    } else {
-        // Default to dark mode if nothing is saved
-        body.classList.remove('light-mode');
-        themeToggle.checked = false;
     }
-
     themeToggle.addEventListener('click', () => {
         body.classList.toggle('light-mode');
-        
-        // Save theme preference
-        if (body.classList.contains('light-mode')) {
-            localStorage.setItem('theme', 'light');
-        } else {
-            localStorage.setItem('theme', 'dark');
-            localStorage.removeItem('theme'); // Or keep it as 'dark'
-        }
+        localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
     });
 
     // --- TYPEWRITER EFFECT ---
     const typewriterElement = document.getElementById('typewriter');
     const roles = ["Embedded Systems.", "Healthcare Technology.", "IoT Innovation.", "AI & Machine Learning."];
-    let roleIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-
+    let roleIndex = 0, charIndex = 0, isDeleting = false;
     function type() {
         const currentRole = roles[roleIndex];
         let typeSpeed = 150;
-
         if (isDeleting) {
             typewriterElement.textContent = currentRole.substring(0, charIndex - 1);
             charIndex--;
@@ -53,18 +33,66 @@ document.addEventListener('DOMContentLoaded', function() {
             typewriterElement.textContent = currentRole.substring(0, charIndex + 1);
             charIndex++;
         }
-
         if (!isDeleting && charIndex === currentRole.length) {
-            typeSpeed = 2000; // Pause at end of word
+            typeSpeed = 2000;
             isDeleting = true;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             roleIndex = (roleIndex + 1) % roles.length;
-            typeSpeed = 500; // Pause before typing new word
+            typeSpeed = 500;
         }
-
         setTimeout(type, typeSpeed);
     }
-
     type();
+
+    // ✅ NEW: PROJECT FILTERING LOGIC ---
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Set active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            const filter = button.getAttribute('data-filter');
+
+            // Filter projects
+            projectCards.forEach(card => {
+                if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                    card.style.display = 'flex'; // Use flex to maintain layout
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // ✅ NEW: SCROLL-BASED FEATURES (ACTIVE NAV & SCROLL-TO-TOP)
+    const sections = document.querySelectorAll('main section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const scrollToTopBtn = document.querySelector('.scroll-to-top');
+
+    window.onscroll = () => {
+        // --- Show/Hide Scroll-to-Top Button
+        if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+        } else {
+            scrollToTopBtn.style.display = 'none';
+        }
+
+        // --- Active Nav Link Highlighting
+        let currentSection = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (scrollY >= sectionTop - 150) { // Offset for better accuracy
+                currentSection = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('data-section') === currentSection) {
+                link.classList.add('active');
+            }
+        });
+    };
 });
