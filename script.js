@@ -9,11 +9,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- THEME TOGGLE (DARK/LIGHT MODE) ---
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
+    const html = document.documentElement;
 
-    // Check for saved theme in localStorage
-    if (localStorage.getItem('theme') === 'light') {
+    // Set initial theme based on localStorage or system preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
         body.classList.add('light-mode');
         themeToggle.checked = true;
+    } else {
+        // Default to dark mode if nothing is saved
+        body.classList.remove('light-mode');
+        themeToggle.checked = false;
     }
 
     themeToggle.addEventListener('click', () => {
@@ -23,34 +29,29 @@ document.addEventListener('DOMContentLoaded', function() {
         if (body.classList.contains('light-mode')) {
             localStorage.setItem('theme', 'light');
         } else {
-            localStorage.removeItem('theme');
+            localStorage.setItem('theme', 'dark');
+            localStorage.removeItem('theme'); // Or keep it as 'dark'
         }
     });
 
     // --- TYPEWRITER EFFECT ---
     const typewriterElement = document.getElementById('typewriter');
-    const roles = ["Embedded Systems", "AI/ML", "IoT Innovation", "Healthcare Technology"];
+    const roles = ["Embedded Systems.", "Healthcare Technology.", "IoT Innovation.", "AI & Machine Learning."];
     let roleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
 
     function type() {
         const currentRole = roles[roleIndex];
-        let displayText = '';
-
-        if (isDeleting) {
-            displayText = currentRole.substring(0, charIndex - 1);
-            charIndex--;
-        } else {
-            displayText = currentRole.substring(0, charIndex + 1);
-            charIndex++;
-        }
-
-        typewriterElement.textContent = displayText;
-
         let typeSpeed = 150;
+
         if (isDeleting) {
+            typewriterElement.textContent = currentRole.substring(0, charIndex - 1);
+            charIndex--;
             typeSpeed /= 2;
+        } else {
+            typewriterElement.textContent = currentRole.substring(0, charIndex + 1);
+            charIndex++;
         }
 
         if (!isDeleting && charIndex === currentRole.length) {
@@ -59,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             roleIndex = (roleIndex + 1) % roles.length;
+            typeSpeed = 500; // Pause before typing new word
         }
 
         setTimeout(type, typeSpeed);
