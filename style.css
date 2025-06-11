@@ -53,15 +53,20 @@ nav .fa-bars { display: none; }
 nav .fa-times { display: none; color: var(--text-dark); }
 body.light-mode nav .fa-times { color: var(--text-light); }
 
-/* --- THEME TOGGLE --- */
-.theme-switch-wrapper { display: flex; align-items: center; gap: 8px; }
+/* --- ✅ THEME TOGGLE FIX --- */
+.theme-switch-wrapper { display: flex; align-items: center; }
 .theme-switch { position: relative; display: inline-block; width: 50px; height: 26px; }
 .theme-switch input { opacity: 0; width: 0; height: 0; }
 .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #555; transition: .4s; border-radius: 34px; }
+.slider .fa-sun, .slider .fa-moon { position: absolute; top: 50%; transform: translateY(-50%); font-size: 14px; }
+.slider .fa-sun { left: 5px; color: #f39c12; }
+.slider .fa-moon { right: 5px; color: #f1c40f; }
 .slider:before { position: absolute; content: ""; height: 20px; width: 20px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%; }
 input:checked + .slider { background-color: var(--primary-color); }
 input:checked + .slider:before { transform: translateX(24px); }
-.fa-sun { color: #f39c12; } .fa-moon { color: #f1c40f; }
+/* Hide the icon that doesn't match the current mode */
+body.light-mode .slider .fa-moon { display: none; }
+body:not(.light-mode) .slider .fa-sun { display: none; }
 
 /* --- HERO SECTION --- */
 .hero { display: flex; align-items: center; justify-content: space-between; min-height: 100vh; padding-top: 80px; gap: 30px; }
@@ -71,7 +76,7 @@ input:checked + .slider:before { transform: translateX(24px); }
 body.light-mode .hero-text p { color: var(--text-secondary-light); }
 #typewriter { color: var(--secondary-color); font-weight: 600; }
 .hero-buttons { display: flex; gap: 20px; flex-wrap: wrap; }
-.hero-image { flex-basis: 35%; }
+.hero-image { flex-basis: 35%; text-align: center; }
 .hero-image img { width: 100%; max-width: 380px; border-radius: 50%; object-fit: cover; aspect-ratio: 1/1; box-shadow: 0 0 50px -10px var(--primary-color); }
 
 /* --- ABOUT SECTION --- */
@@ -136,10 +141,13 @@ footer p { color: #888; font-size: 0.9rem; }
     .about-col-1 { display: none; } /* Hide image on smaller tablets */
     .about-col-2 { flex-basis: 100%; }
 }
+
 @media (max-width: 768px) {
-    .hero { flex-direction: column-reverse; text-align: center; padding-top: 120px; }
+    /* ✅ MOBILE LAYOUT FIX */
+    .hero { flex-direction: column; text-align: center; padding-top: 120px; }
+    .hero-image { order: 1; margin-bottom: 30px; } /* Image on top */
+    .hero-text { order: 2; } /* Text below */
     .hero-text h1 { font-size: 2.8rem; }
-    .hero-image { margin-bottom: 40px; }
     .hero-image img { max-width: 280px; }
     .hero-buttons { justify-content: center; }
     
