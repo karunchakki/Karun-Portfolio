@@ -50,7 +50,8 @@ body.light-mode .nav-links a { color: var(--text-secondary-light); }
 .nav-right { display: flex; align-items: center; gap: 25px; }
 nav .fas { font-size: 22px; cursor: pointer; }
 nav .fa-bars { display: none; }
-nav .fa-times { color: var(--text-dark); }
+nav .fa-times { display: none; color: var(--text-dark); }
+body.light-mode nav .fa-times { color: var(--text-light); }
 
 /* --- THEME TOGGLE --- */
 .theme-switch-wrapper { display: flex; align-items: center; gap: 8px; }
@@ -63,19 +64,19 @@ input:checked + .slider:before { transform: translateX(24px); }
 .fa-sun { color: #f39c12; } .fa-moon { color: #f1c40f; }
 
 /* --- HERO SECTION --- */
-.hero { display: flex; align-items: center; justify-content: space-between; min-height: 100vh; padding-top: 80px; }
+.hero { display: flex; align-items: center; justify-content: space-between; min-height: 100vh; padding-top: 80px; gap: 30px; }
 .hero-text { flex-basis: 55%; }
 .hero-text h1 { font-size: 3.8rem; margin-bottom: 10px; line-height: 1.2; }
 .hero-text p { font-size: 1.5rem; color: var(--text-secondary-dark); margin-bottom: 40px; }
 body.light-mode .hero-text p { color: var(--text-secondary-light); }
 #typewriter { color: var(--secondary-color); font-weight: 600; }
-.hero-buttons { display: flex; gap: 20px; }
+.hero-buttons { display: flex; gap: 20px; flex-wrap: wrap; }
 .hero-image { flex-basis: 35%; }
 .hero-image img { width: 100%; max-width: 380px; border-radius: 50%; object-fit: cover; aspect-ratio: 1/1; box-shadow: 0 0 50px -10px var(--primary-color); }
 
 /* --- ABOUT SECTION --- */
 #about .sub-title { text-align: left; }
-.about-container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 50px; }
+.about-container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 50px; align-items: flex-start; }
 .about-col-1 { flex-basis: 35%; }
 .about-col-1 img { width: 100%; border-radius: 15px; }
 .about-col-2 { flex-basis: 58%; }
@@ -141,7 +142,8 @@ footer p { color: #888; font-size: 0.9rem; }
     .hero-image { margin-bottom: 40px; }
     .hero-image img { max-width: 280px; }
     .hero-buttons { justify-content: center; }
-    /* Mobile Menu */
+    
+    /* Mobile Menu Logic */
     .nav-links {
         background: var(--surface-dark);
         position: fixed;
@@ -157,7 +159,6 @@ footer p { color: #888; font-size: 0.9rem; }
         align-items: center;
     }
     body.light-mode .nav-links { background: var(--surface-light); }
-    .nav-links li a:hover::after { width: 0; }
     nav .fa-bars { display: block; }
-    nav .fa-times { position: absolute; top: 25px; left: 25px; }
+    .nav-links .fa-times { display: block; position: absolute; top: 25px; left: 25px; }
 }
