@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
     type();
 });
 
-// --- NEW: TABBED ABOUT ME SECTION SCRIPT ---
+// --- TABBED ABOUT ME SECTION SCRIPT ---
 var tablinks = document.getElementsByClassName("tab-links");
 var tabcontents = document.getElementsByClassName("tab-contents");
 function opentab(tabname){
@@ -66,7 +66,7 @@ function opentab(tabname){
     document.getElementById(tabname).classList.add("active-tab");
 }
 
-// --- NEW: MOBILE HAMBURGER MENU SCRIPT ---
+// --- MOBILE HAMBURGER MENU SCRIPT ---
 var sidemenu = document.getElementById("sidemenu");
 function openmenu(){
     sidemenu.style.right = "0";
