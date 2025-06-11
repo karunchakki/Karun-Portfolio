@@ -166,3 +166,126 @@ footer p { color: #888; font-size: 0.9rem; }
     nav .fa-bars { display: block; }
     .nav-links .fa-times { display: block; position: absolute; top: 25px; left: 25px; }
 }
+
+/* --- NEW: PROJECT DETAIL PAGE STYLES --- */
+/* Add this to the very bottom of your existing style.css file */
+
+.project-header {
+    padding: 20px 10%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.back-link {
+    color: var(--text-secondary-dark);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+body.light-mode .back-link {
+    color: var(--text-secondary-light);
+}
+.back-link:hover {
+    color: var(--primary-color);
+}
+
+.project-hero {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.project-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.project-hero .tagline {
+    font-size: 1.2rem;
+    color: var(--text-secondary-dark);
+    margin-bottom: 40px;
+}
+body.light-mode .project-hero .tagline {
+    color: var(--text-secondary-light);
+}
+
+.project-main-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 40px;
+}
+
+.project-detail-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+}
+
+.project-story h2 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.project-story p {
+    line-height: 1.8;
+    color: var(--text-secondary-dark);
+}
+body.light-mode .project-story p {
+    color: var(--text-secondary-light);
+}
+
+.project-sidebar .sidebar-widget {
+    background: var(--surface-dark);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+body.light-mode .project-sidebar .sidebar-widget {
+    background: var(--surface-light);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.project-sidebar h3 {
+    margin-top: 0;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.project-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.project-sidebar ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.project-sidebar ul li i {
+    margin-right: 12px;
+    color: var(--primary-color);
+    width: 20px;
+}
+
+.project-footer {
+    text-align: center;
+    padding: 40px;
+    margin-top: 60px;
+    color: #888;
+}
+
+/* Responsive styles for project detail page */
+@media (max-width: 768px) {
+    .project-hero h1 {
+        font-size: 2.5rem;
+    }
+    .project-detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
