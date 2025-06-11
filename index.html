@@ -33,10 +33,7 @@
                 <div class="theme-switch-wrapper">
                     <label class="theme-switch">
                         <input type="checkbox" id="theme-toggle">
-                        <span class="slider round">
-                            <i class="fas fa-sun"></i>
-                            <i class="fas fa-moon"></i>
-                        </span>
+                        <span class="slider"></span>
                     </label>
                 </div>
                 <i class="fas fa-bars" onclick="openmenu()"></i>
@@ -50,7 +47,7 @@
             <div class="hero-image" data-aos="fade-up">
                 <img src="IMG_20250516_154356355_HDR_PORTRAIT.jpg" alt="Karun Chakki">
             </div>
-            <div class="hero-text" data-aos="fade-up">
+            <div class="hero-text" data-aos="fade-up" data-aos-delay="100">
                 <h1>Hi, I’m Karun Chakki</h1>
                 <p>A Bioelectronics Engineer building <span id="typewriter"></span></p>
                 <div class="hero-buttons">
@@ -101,40 +98,54 @@
             </div>
         </section>
 
-        <!-- ✅ START: Copy and paste this final, corrected projects section -->
-<section id="projects">
-    <h2 class="sub-title" data-aos="fade-up">Featured Projects</h2>
-    <div class="project-grid">
-        <!-- Project 1 -->
-        <div class="project-card" data-aos="fade-up">
-            <!-- Updated to .png -->
-            <img src="project-qkd.png" alt="A software dashboard for a Quantum Key Distribution simulation">
-            <h3>Quantum Secure Banking (QKD)</h3>
-            <p>A simulation of a secure banking system using the BB84 QKD protocol (Qiskit) and AES encryption to protect transactions from eavesdropping.</p>
-            <div class="project-tags"><span>Flask</span><span>MySQL</span><span>Qiskit</span><span>Python</span></div>
-            <div class="project-links"><a href="qkd-project.html" class="btn-link">Learn More →</a></div>
-        </div>
-        <!-- Project 2 -->
-        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-            <!-- Updated to .png -->
-            <img src="project-ecg.png" alt="A medical software UI showing ECG analysis">
-            <h3>Cardiovascular Disease Detection</h3>
-            <p>Developed ECG-based classification models using decision trees and clustering algorithms to detect cardiovascular diseases. Published in IEEE conference proceedings.</p>
-            <div class="project-tags"><span>Machine Learning</span><span>Python</span><span>Pandas</span></div>
-            <div class="project-links"><a href="#" class="btn-link">Learn More →</a></div>
-        </div>
-        <!-- Project 3 -->
-        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-            <!-- Updated to .png -->
-            <img src="project-iot.png" alt="A product shot of an Arduino and ultrasonic sensor IoT project">
-            <h3>Smart Stick for the Blind</h3>
-            <p>An Arduino-based assistive device designed to enhance mobility for visually impaired individuals through ultrasonic proximity sensing and navigation alerts.</p>
-            <div class="project-tags"><span>IoT</span><span>Arduino</span><span>Embedded C</span><span>Sensors</span></div>
-            <div class="project-links"><a href="#" class="btn-link">Learn More →</a></div>
-        </div>
-    </div>
-</section>
-<!-- ✅ END: Corrected projects section -->
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2 class="sub-title" data-aos="fade-up">Featured Projects</h2>
+            <div class="project-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-aos="fade-up">
+                    <img src="project-qkd.png" alt="A software dashboard for a Quantum Key Distribution simulation">
+                    <h3>Quantum Secure Banking (QKD)</h3>
+                    <p>A simulation of a secure banking system using the BB84 QKD protocol and AES encryption to protect financial transactions.</p>
+                    <div class="project-tags"><span>Flask</span><span>MySQL</span><span>Qiskit</span><span>Python</span></div>
+                    <div class="project-links"><a href="qkd-project.html" class="btn-link">Learn More →</a></div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="project-ecg.png" alt="A medical software UI showing ECG analysis">
+                    <h3>Cardiovascular Disease Detection</h3>
+                    <p>Developed ECG-based classification models using decision trees and clustering algorithms to detect cardiovascular diseases.</p>
+                    <div class="project-tags"><span>Machine Learning</span><span>Python</span><span>Pandas</span></div>
+                    <div class="project-links"><a href="https://github.com/karunchakki/Cardiovascular-Disease-Detection-ML" target="_blank" class="btn-link">View on GitHub →</a></div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="project-iot.png" alt="A product shot of an Arduino and ultrasonic sensor IoT project">
+                    <h3>Smart Stick for the Blind</h3>
+                    <p>An Arduino-based assistive device to enhance mobility for visually impaired individuals through ultrasonic proximity sensing.</p>
+                    <div class="project-tags"><span>IoT</span><span>Arduino</span><span>Embedded C</span><span>Sensors</span></div>
+                    <div class="project-links"><a href="https://github.com/karunchakki/IoT-Smart-Stick" target="_blank" class="btn-link">View on GitHub →</a></div>
+                </div>
+
+                <!-- ✅ NEW Project 4: Air Quality Prediction -->
+                <div class="project-card" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1611273634353-91183c5ce526?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Data chart showing air quality prediction analytics">
+                    <h3>Air Quality Prediction</h3>
+                    <p>A machine learning model to forecast air quality levels based on historical data, using feature engineering and a decision tree algorithm.</p>
+                    <div class="project-tags"><span>Machine Learning</span><span>Python</span><span>Scikit-learn</span></div>
+                    <div class="project-links"><a href="https://github.com/karunchakki/Air-Quality-Prediction" target="_blank" class="btn-link">View on GitHub →</a></div>
+                </div>
+                
+                <!-- ✅ NEW Project 5: Smart Pulse Oximeter -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1629733477839-2512a14e2d09?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="A smart pulse oximeter device showing real-time health data">
+                    <h3>Smart Pulse Oximeter</h3>
+                    <p>An IoT-based health monitor for real-time tracking of vital signs including heart rate, blood oxygen saturation (SpO2), and body temperature.</p>
+                    <div class="project-tags"><span>IoT</span><span>ESP32</span><span>Sensors</span><span>Real-Time Data</span></div>
+                    <div class="project-links"><a href="https://github.com/karunchakki/Smart-Pulse-Oximeter" target="_blank" class="btn-link">View on GitHub →</a></div>
+                </div>
+            </div>
+        </section>
 
         <!-- Publications & Certifications Section -->
         <section id="publications">
@@ -180,7 +191,7 @@
             <a href="https://www.linkedin.com/in/karunchakki/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a> 
             <a href="https://github.com/karunchakki" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
         </div>
-        <p>© 2025 Karun Chakki. Crafted with code and creativity.</p>
+        <p>© 2024 Karun Chakki. Crafted with code and creativity.</p>
     </footer>
 
     <!-- Scripts -->
