@@ -26,11 +26,54 @@
                 <li><a href="#about" onclick="closemenu()">About</a></li>
                 <li><a href="#projects" onclick="closemenu()">Projects</a></li>
                 <li><a href="#publications" onclick="closemenu()">Publications</a></li>
-                <li><a href="#contact" onclick="closemenu()">Contact</a></li>
+                <li><s `order` to 2 (bottom)**.
+
+You only need to update your **`style.css`** file. The `index.html` and `script.js` are already correct.
+
+---
+
+### 🎨 **`style.css`** (Final & Corrected Version)
+
+Simply replace the entire content of your `style.css` file with this code.
+
+```css
+/* --- VARIABLES & GLOBAL STYLES --- */
+:root {
+    --primary-color: #3A7DDE; /* A strong, professional blue */
+    --secondary-color: #4CED9B; /* A vibrant, modern mint-green */
+    --background-dark: #101418;
+    --surface-dark: #1A1F24;
+    --text-dark: #EAEAEA;
+    --text-secondary-dark: #A0AEC0;
+    --background-light: #F7F9FC;
+    --surface-light: #FFFFFF;
+    --text-light: #1A202C;
+    --text-secondary-light: #4A5568;
+    --font-family: 'Poppins', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+body.light-mode {
+    background-color: var(--background-light);
+    color: var(--text-light);
+}
+
+/* --- UTILITIES --- */
+section { padding: 80px 10%; max-width: 1200px; margin: 0 auto; }
+.sub-title { font-size: 2.5rem; font-weight: 600; color: var(--primary-color); margin-bottom: a href="#contact" onclick="closemenu()">Contact</a></li>
                 <i class="fas fa-times" onclick="closemenu()"></i>
             </ul>
             <div class="nav-right">
-                <!-- ✅ UPDATED THEME SWITCHER HTML -->
                 <div class="theme-switch-wrapper">
                     <label class="theme-switch">
                         <input type="checkbox" id="theme-toggle">
@@ -42,61 +85,100 @@
                 </div>
                 <i class="fas fa-bars" onclick="openmenu()"></i>
             </div>
-        </nav>
+        </nav50px; }
+.btn { padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; display: inline-block; }
+.btn:hover { transform: translateY(-3px); box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
+.btn-primary { background-color: var(--primary-color); color: white; }
+.btn-secondary { background-color: transparent; border: 2px>
     </header>
 
     <main>
-        <!-- Home/Hero Section -->
+        <!-- ✅ CORRECTED Home/Hero Section -->
         <section id="home" class="hero">
-            <div class="hero-image" data-aos="fade-left">
-                <img src="IMG_20250516_154356355_HDR_PORTRAIT.jpg" alt="Karun Chakki">
+            <!-- Image now comes FIRST in the code -->
+            <div class="hero solid var(--primary-color); color: var(--primary-color); }
+
+/* --- HEADER & NAV --- */
+header { position: fixed; width: 100%; top: 0; z-index: 1000; background: rgba(16, 20, 24, 0.7); backdrop--image" data-aos="fade-left">
+                <img src="IMG_2025051filter: blur(10px); border-bottom: 1px solid rgba(255, 26_154356355_HDR_PORTRAIT.jpg" alt="Karun Chak55, 255, 0.1); }
+body.light-mode header { background: rgbaki">
             </div>
-            <div class="hero-text" data-aos="fade-right">
+            <!-- Text now comes SECOND in the code -->
+            <div class="hero-(247, 249, 252, 0.7); border-bottom:text" data-aos="fade-right">
                 <h1>Hi, I’m Karun Chakki</h1>
-                <p>A Bioelectronics Engineer building <span id="typewriter"></span></p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Projects</a>
+ 1px solid rgba(0, 0, 0, 0.1); }
+nav { display                <p>A Bioelectronics Engineer building <span id="typewriter"></span></p>
+                <div: flex; justify-content: space-between; align-items: center; padding: 15px 10%; class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Projects max-width: 1200px; margin: 0 auto; }
+.logo { font-</a>
                     <a href="KARUN-CHAKKI=Resume-20250607.pdf" class="btn btn-secondary" target="_blank" download>Download Resume</a>
                 </div>
-            </div>
+            size: 1.5rem; font-weight: 700; text-decoration: none; color: var(--text-dark); }
+body.light-mode .logo { color: var(--text-light); }
+.nav-links { display: flex; list-style: none; margin: 0; padding</div>
         </section>
 
         <!-- About Me Section -->
         <section id="about">
             <div class="about-container">
-                <div class="about-col-1" data-aos="fade-right">
+                <div class="about-col-1" data-aos="fade-right: 0; gap: 35px; }
+.nav-links a { text-decoration: none; color: var(--text-secondary-dark); font-weight: 500; transition: color ">
                     <img src="IMG_20250516_154356355_HDR_PORTRAIT.jpg" alt="Karun Chakki profile">
                 </div>
-                <div class="about-col-2" data-aos="fade-left">
-                    <h2 class="sub-title">About Me</h2>
-                    <p>As a Bioelectronics Engineering graduate from REVA University, I’m driven by a passion for integrating technology with healthcare. During my internship at Tescom Technologies, I had the opportunity to train over 500 students in embedded systems and IoT. I thrive on solving real-world challenges and am eager to contribute to impactful projects in healthtech, IoT, and intelligent automation.</p>
+                0.2s; position: relative; }
+body.light-mode .nav-links a { color:<div class="about-col-2" data-aos="fade-left">
+                    <h2 class var(--text-secondary-light); }
+.nav-links a:hover { color: var(--primary-="sub-title">About Me</h2>
+                    <p>As a Bioelectronics Engineering graduate from REVA University,color); }
+.nav-right { display: flex; align-items: center; gap: 25 I’m driven by a passion for integrating technology with healthcare. During my internship at Tescom Technologies, I had thepx; }
+nav .fas { font-size: 22px; cursor: pointer; }
+nav opportunity to train over 500 students in embedded systems and IoT. I thrive on solving real-world challenges and .fa-bars { display: none; }
+nav .fa-times { display: none; color: var am eager to contribute to impactful projects in healthtech, IoT, and intelligent automation.</p>
 
-                    <div class="tab-titles">
+                    <div class="(--text-dark); }
+body.light-mode nav .fa-times { color: var(--text-lighttab-titles">
                         <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience); }
+
+/* --- THEME TOGGLE --- */
+.theme-switch-wrapper { display: flex; align-items</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p: center; }
+.theme-switch { position: relative; display: inline-block; width: 5>
                     </div>
 
                     <div class="tab-contents active-tab" id="skills">
-                        <ul>
+                        <ul>0px; height: 26px; }
+.theme-switch input { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; cursor: pointer; top:
                             <li><span>Programming</span><br>Python, SQL, Perl, HTML, CSS, Java</li>
-                            <li><span>Tools & Platforms</span><br>Arduino, ESP32, Raspberry Pi, Flask, MySQL, Git, MATLAB, Tinkercad</li>
-                            <li><span>Core Areas</span><br>Embedded Systems, AI/ML, IoT, Biomedical Instrumentation</li>
+                            <li><span>Tools & 0; left: 0; right: 0; bottom: 0; background-color: #5 Platforms</span><br>Arduino, ESP32, Raspberry Pi, Flask, MySQL, Git, MATLAB, Tinkerc55; transition: .4s; border-radius: 34px; }
+.slider .faad</li>
+                            <li><span>Core Areas</span><br>Embedded Systems, AI/ML, IoT, Biomedical Instrumentation</li>-sun, .slider .fa-moon { position: absolute; top: 50%; transform: translateY(-
                             <li><span>Soft Skills</span><br>Communication, Teamwork, Time Management, Adaptability, Research</li>
-                        </ul>
+50%); font-size: 14px; }
+.slider .fa-sun { left:                         </ul>
                     </div>
                     <div class="tab-contents" id="experience">
                         <ul>
-                            <li><span>Aug 2024 - May 2025</span><br>Project Developer Intern at Tescom Technologies</li>
-                            <li><span>Key Roles</span><br>Trained 500+ students, assembled and tested circuits, developed STEM kits.</li>
+                            5px; color: #f39c12; }
+.slider .fa-moon { right: 5<li><span>Aug 2024 - May 2025</span><br>Project Developer Intern at Tescom Technologies</li>px; color: #f1c40f; }
+.slider:before { position: absolute; content
+                            <li><span>Key Roles</span><br>Trained 500+ students, assembled and tested circuits, developed STEM kits: ""; height: 20px; width: 20px; left: 3px; bottom:.</li>
                         </ul>
                     </div>
                     <div class="tab-contents" id="education">
-                        <ul>
-                            <li><span>2021 - Present</span><br>B.Tech, Bioelectronics Engineering at REVA University (CGPA 8.8)</li>
-                            <li><span>2019 - 2021</span><br>Senior Secondary at Gurukul PU College of Science (80.83%)</li>
-                            <li><span>2019</span><br>Higher Secondary at SBR Public School (80%)</li>
-                        </ul>
+                         3px; background-color: white; transition: .4s; border-radius: 50%;<ul>
+                            <li><span>2021 - Present</span><br>B.Tech, Bioelectronics Engineering at RE }
+input:checked + .slider { background-color: var(--primary-color); }
+input:checked + .sliderVA University (CGPA 8.8)</li>
+                            <li><span>2019 - 202:before { transform: translateX(24px); }
+body.light-mode .slider .fa-moon1</span><br>Senior Secondary at Gurukul PU College of Science (80.83%)</li>
+                             { display: none; }
+body:not(.light-mode) .slider .fa-sun { display:<li><span>2019</span><br>Higher Secondary at SBR Public School (80%)</li>
+                         none; }
+
+/* --- HERO SECTION --- */
+.hero { display: flex; align-items: center;</ul>
                     </div>
                 </div>
             </div>
@@ -104,84 +186,142 @@
 
         <!-- Projects Section -->
         <section id="projects">
-            <h2 class="sub-title" data-aos="fade-up">Featured Projects</h2>
+            <h2 class="sub-title" data-aos="fade-up"> justify-content: space-between; min-height: 100vh; padding-top: 80px; gap: 30px; }
+.hero-text { flex-basis: 55%; }
+Featured Projects</h2>
             <div class="project-grid">
                  <!-- Project 1 -->
-                 <div class="project-card" data-aos="fade-up">
-                    <img src="https://images.unsplash.com/photo-1635070045095-23349195b9da?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Quantum Secure Banking Project">
-                    <h3>Quantum Secure Banking (QKD)</h3>
-                    <p>A simulation of a secure banking system using the BB84 QKD protocol (Qiskit) and AES encryption to protect transactions from eavesdropping.</p>
-                    <div class="project-tags"><span>Flask</span><span>MySQL</span><span>Qiskit</span><span>Python</span></div>
-                    <div class="project-links"><a href="https://github.com/karunchakki/Quantum-Secure-Banking" target="_blank" class="btn-link">View Code <i class="fab fa-github"></i></a></div>
-                </div>
+                 <div class="project.hero-text h1 { font-size: 3.8rem; margin-bottom: 10-card" data-aos="fade-up">
+                    <img src="https://images.unsplash.compx; line-height: 1.2; }
+.hero-text p { font-size: /photo-1635070045095-23349191.5rem; color: var(--text-secondary-dark); margin-bottom: 40px;5b9da?q=80&w=1932&auto=format&fit=crop }
+body.light-mode .hero-text p { color: var(--text-secondary-light); }&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8
+#typewriter { color: var(--secondary-color); font-weight: 600; }
+MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Quantum Secure Banking Project">
+                    <h3>Quantum Secure Banking (QKD).hero-buttons { display: flex; gap: 20px; flex-wrap: wrap; }
+.hero-image { flex-basis: 35%; text-align: center; }
+.hero-image img</h3>
+                    <p>A simulation of a secure banking system using the BB84 QKD protocol (Qisk { width: 100%; max-width: 380px; border-radius: 5it) and AES encryption to protect transactions from eavesdropping.</p>
+                    <div class="project-tags">0%; object-fit: cover; aspect-ratio: 1/1; box-shadow: 0 <span>Flask</span><span>MySQL</span><span>Qiskit</span><span>Python</span></div>
+                    <div class="project-links0 50px -10px var(--primary-color); }
+
+/* --- ABOUT SECTION --- */
+"><a href="https://github.com/karunchakki/Quantum-Secure-Banking" target="_blank" class="btn-link">View Code <i class="fab fa-github"></i></a></div>
+                </div>#about .sub-title { text-align: left; }
+.about-container { display: flex;
                 <!-- Project 2 -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1581092921462-20526a275494?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cardiovascular Disease Detection">
+                <div class="project-card" data-aos="fade-up justify-content: space-between; flex-wrap: wrap; gap: 50px; align-items" data-aos-delay="100">
+                    <img src="https://images.unsplash.com: flex-start; }
+.about-col-1 { flex-basis: 35%; }
+.about-col-1 img { width: 100%; border-radius: 15px;/photo-1581092921462-20526a2 }
+.about-col-2 { flex-basis: 58%; }
+.tab-titles {75494?q=80&w=2070&auto=format&fit= display: flex; margin: 20px 0 40px; }
+.tab-links {crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8f margin-right: 50px; font-size: 18px; font-weight: 500A%3D%3D" alt="Cardiovascular Disease Detection">
                     <h3>Cardiovascular Disease Detection</h3>
-                    <p>Developed ECG-based classification models using decision trees and clustering algorithms to detect cardiovascular diseases. Published in IEEE conference proceedings.</p>
-                    <div class="project-tags"><span>Machine Learning</span><span>Python</span><span>Pandas</span></div>
-                    <div class="project-links"><a href="https://github.com/karunchakki/Cardiovascular-Disease-Detection-ML" target="_blank" class="btn-link">View Code <i class="fab fa-github"></i></a></div>
+; cursor: pointer; position: relative; }
+.tab-links::after { content: ''; width:                     <p>Developed ECG-based classification models using decision trees and clustering algorithms to detect cardiovascular diseases. Published in IEEE0; height: 3px; background: var(--secondary-color); position: absolute; left: 0 conference proceedings.</p>
+                    <div class="project-tags"><span>Machine Learning</span><span>Python</span><span>Pand; bottom: -8px; transition: 0.5s; }
+.tab-links.active-as</span></div>
+                    <div class="project-links"><a href="https://github.com/karunchlink::after { width: 50%; }
+.tab-contents ul li { list-style: none; margin: 10px 0; line-height: 1.6; }
+.tab-akki/Cardiovascular-Disease-Detection-ML" target="_blank" class="btn-link">View Code <i class="fab fa-github"></i></a></div>
                 </div>
                 <!-- Project 3 -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1614846384571-54b92e85a681?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Smart Stick for Blind">
+                contents ul li span { color: var(--secondary-color); font-size: 1rem; font-weight<div class="project-card" data-aos="fade-up" data-aos-delay="20: 600; }
+.tab-contents { display: none; }
+.tab-contents.0">
+                    <img src="https://images.unsplash.com/photo-161484active-tab { display: block; }
+
+/* --- PROJECTS SECTION --- */
+#projects .sub-title { text-6384571-54b92e85a681?q=8align: center; }
+.project-grid { display: grid; grid-template-columns: repeat(auto0&w=1974&auto=format&fit=crop&ixlib=rb-4.-fit, minmax(320px, 1fr)); gap: 30px; }
+0.3&ixid=M3wxMjA3fDB8MHxwaG90by1.project-card { background: var(--surface-dark); border-radius: 12px; overflow:wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt hidden; transition: transform 0.3s, box-shadow 0.3s; display: flex;="Smart Stick for Blind">
                     <h3>Smart Stick for the Blind</h3>
-                    <p>An Arduino-based assistive device designed to enhance mobility for visually impaired individuals through ultrasonic proximity sensing and navigation alerts.</p>
-                    <div class="project-tags"><span>IoT</span><span>Arduino</span><span>Embedded C</span><span>Sensors</span></div>
-                    <div class="project-links"><a href="https://github.com/karunchakki/IoT-Smart-Stick" target="_blank" class="btn-link">View Code <i class="fab fa-github"></i></a></div>
+                    <p>An Arduino-based flex-direction: column; border: 1px solid #2a2f35; }
+body. assistive device designed to enhance mobility for visually impaired individuals through ultrasonic proximity sensing and navigation alerts.</p>
+                    <divlight-mode .project-card { background: var(--surface-light); border-color: #e2e class="project-tags"><span>IoT</span><span>Arduino</span><span>Embedded C</span><span>Sensors</span></div>
+                    <8f0; }
+.project-card:hover { transform: translateY(-10px); box-shadowdiv class="project-links"><a href="https://github.com/karunchakki/IoT-Smart: 0 10px 20px rgba(0,0,0,0.2); border-Stick" target="_blank" class="btn-link">View Code <i class="fab fa-github"></i></a>-color: var(--primary-color); }
+.project-card img { width: 100%;</div>
                 </div>
             </div>
         </section>
 
         <!-- Publications & Certifications Section -->
-        <section id="publications">
-            <h2 class="sub-title" data-aos="fade-up">Publications & Certifications</h2>
+        < height: 220px; object-fit: cover; }
+.project-card h3 { paddingsection id="publications">
+            <h2 class="sub-title" data-aos="fade-up">: 20px 20px 0 20px; margin: 0; }
+.Publications & Certifications</h2>
             <div class="pub-cert-grid">
-                <div class="publications-list" data-aos="fade-right">
-                    <h3><i class="fas fa-book-open"></i> Publications</h3>
+                <div class="publicationsproject-card p { padding: 10px 20px; font-size: 0.95rem; color: var(--text-secondary-dark); flex-grow: 1; }
+body.-list" data-aos="fade-right">
+                    <h3><i class="fas fa-book-openlight-mode .project-card p { color: var(--text-secondary-light); }
+.project-"></i> Publications</h3>
                     <ul>
-                        <li><b>A survey on Machine Learning Methods for Cardiovascular disease...</b><br><i>IEEE 2024 (ICECCC)</i> <a href="#" target="_blank" class="pub-link">Read More →</a></li>
-                        <li><b>Air Quality Prediction Based on Decision Tree...</b><br><i>IEEE 2023 (ICSSES)</i> <a href="#" target="_blank" class="pub-link">Read More →</a></li>
-                        <li><b>Computational identification of novel LTA4H inhibitors...</b><br><i>Journal of Integrated Science and Technology</i> <a href="#" target="_blank" class="pub-link">Read More →</a></li>
+                        <li><b>A survey on Machine Learning Methods for Cardiovascular disease...</b><br><i>IEEE 2024 (ICECCC)</i> <a href="#" target="_blank" class="pub-link">Read More &tags { padding: 0 20px 15px; }
+.project-tags span { background-color: rgba(76, 237, 155, 0.1); colorrarr;</a></li>
+                        <li><b>Air Quality Prediction Based on Decision Tree...</b><br><i>IEEE 2: var(--secondary-color); padding: 5px 10px; border-radius: 20023 (ICSSES)</i> <a href="#" target="_blank" class="pub-link">Read Morepx; font-size: 0.8rem; margin-right: 5px; font-weight: →</a></li>
+                        <li><b>Computational identification of novel LTA4H inhibitors...</b><br><i> 500; }
+.project-links { padding: 0 20px 20pxJournal of Integrated Science and Technology</i> <a href="#" target="_blank" class="pub-link">Read More &; }
+.btn-link { color: var(--secondary-color); text-decoration: none; font-rarr;</a></li>
                     </ul>
                 </div>
-                <div class="certifications-list" data-aos="fade-left">
+                <div class="certifications-list" data-aosweight: 600; }
+
+/* --- PUBLICATIONS & CERTIFICATIONS --- */
+#publications .sub-title="fade-left">
                     <h3><i class="fas fa-award"></i> Certifications</h3>
-                    <ul>
+                    <ul> { text-align: center; }
+.pub-cert-grid { display: grid; grid-template-
                         <li><i class="fas fa-dna"></i> Bioinformatics With Python — Udemy</li>
-                        <li><i class="fas fa-signal"></i> Medical Signal Processing — IEEE</li>
-                        <li><i class="fas fa-microchip"></i> Fundamentals of LabVIEW — VI Solutions</li>
-                        <li><i class="fab fa-android"></i> Android 14 & Kotlin Development — Udemy</li>
+                        <li><icolumns: 1fr 1fr; gap: 50px; align-items: start; }
+ class="fas fa-signal"></i> Medical Signal Processing — IEEE</li>
+                        <li><i class="fas fa-.publications-list ul, .certifications-list ul { list-style: none; padding: 0;microchip"></i> Fundamentals of LabVIEW — VI Solutions</li>
+                        <li><i class="fab fa-android"> }
+.publications-list li, .certifications-list li { background: var(--surface-dark); padding</i> Android 14 & Kotlin Development — Udemy</li>
                     </ul>
                 </div>
             </div>
-        </section>
+        </section: 15px 20px; border-radius: 8px; margin-bottom: 1>
 
         <!-- Contact Section -->
         <section id="contact">
-            <h2 class="sub-title" data-aos="fade-up">Let's Connect</h2>
-            <p data-aos="fade-up" data-aos-delay="50">I'm actively seeking roles in healthcare tech and innovation. If you have an exciting project or opportunity, I'd love to hear from you!</p>
-            <form action="https://formspree.io/f/xnnvploy" method="POST" class="contact-form" data-aos="fade-up" data-aos-delay="100">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn btn-primary">Send Message</button>
+            <h2 class="sub-5px; border-left: 3px solid var(--primary-color); }
+body.light-modetitle" data-aos="fade-up">Let's Connect</h2>
+            <p data-aos="fade .publications-list li, body.light-mode .certifications-list li { background: var(--surface-light); }-up" data-aos-delay="50">I'm actively seeking roles in healthcare tech and innovation. If you have an exciting project or opportunity, I'd love to hear from you!</p>
+            <form
+.pub-link { text-decoration: none; color: var(--primary-color); font-weight: action="https://formspree.io/f/xnnvploy" method="POST" class="contact 600; font-size: 0.9em; float: right; }
+.certifications-form" data-aos="fade-up" data-aos-delay="100">
+                <-list li i { margin-right: 12px; color: var(--primary-color); width:input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" 20px; text-align: center; }
+
+/* --- CONTACT SECTION --- */
+#contact .sub name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder-title { text-align: center; }
+#contact p { text-align: center; max-width: ="Your Message" required></textarea>
+                <button type="submit" class="btn btn-primary">Send600px; margin: -20px auto 30px auto; }
+.contact-form Message</button>
             </form>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer> { max-width: 700px; margin: 0 auto; display: flex; flex-direction
         <div class="social-links">
-            <a href="mailto:chakkikarun@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/in/karunchakki/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a> 
-            <a href="https://github.com/karunchakki" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="mailto:chakkikarun@gmail: column; gap: 20px; }
+.contact-form input, .contact-form textarea {.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href width: 100%; padding: 15px; border-radius: 8px; border:="https://www.linkedin.com/in/karunchakki/" target="_blank" aria-label=" 1px solid #333; background: var(--surface-dark); color: var(--text-dark); fontLinkedIn"><i class="fab fa-linkedin"></i></a> 
+            <a href="https://github.com-family: var(--font-family); font-size: 1rem; }
+body.light-mode .contact-form input, body.light-mode .contact-form textarea { background: var(--surface-light/karunchakki" target="_blank"aria-label="GitHub"><i class="fab fa-github"></i></a>
         </div>
-        <p>© 2025 Karun Chakki. Crafted with code and creativity.</p>
+        <p>© 2025 Karun Chakki. Crafted with code and creativity); color: var(--text-light); border-color: #ccc; }
+.contact-form button {.</p>
     </footer>
 
     <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos align-self: center; width: 200px; }
+
+/* --- FOOTER --- */
+footer@2.3.1/dist/aos.js"></script>
+    <script src="script.js { text-align: center; padding: 40px; background: var(--background-dark); margin-"></script>
 </body>
 </html>
