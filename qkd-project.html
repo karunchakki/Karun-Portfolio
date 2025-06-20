@@ -10,11 +10,11 @@
 </head>
 <body class="project-detail-page">
 
+    <!-- Universal Header -->
     <header>
         <nav>
             <a href="index.html" class="logo">Karun C.</a>
             <ul class="nav-links" id="sidemenu">
-                <!-- Links now point back to the main page sections -->
                 <li><a href="index.html#about" onclick="closemenu()">About</a></li>
                 <li><a href="index.html#projects" onclick="closemenu()">Projects</a></li>
                 <li><a href="index.html#publications" onclick="closemenu()">Publications</a></li>
@@ -40,14 +40,11 @@
         </section>
 
         <div class="project-main-content">
-            <!-- Left Column: Main Description -->
             <div class="project-info-column">
                 <h2>The Project Story</h2>
-                <p>Traditional encryption methods are becoming increasingly vulnerable to the power of emerging quantum computers. My solution was to develop a simulation that uses the principles of quantum mechanics to secure financial transactions. By implementing the BB84 Quantum Key Distribution (QKD) protocol, the system allows two parties to generate a shared, secret key that is provably secure.</p>
-                <p>Any attempt to eavesdrop on the key exchange introduces detectable errors, immediately alerting the system to a breach. The main challenge was bridging the gap between theoretical quantum physics and practical Python code using Qiskit. This project taught me the importance of robust error handling and gave me a profound appreciation for how physics-based principles can create next-generation security solutions.</p>
+                <p>Traditional encryption is vulnerable to emerging quantum computers. My solution was to develop a simulation that uses the BB84 Quantum Key Distribution (QKD) protocol to create a provably secure communication channel. The system can detect any eavesdropping attempts in real-time by measuring the Quantum Bit Error Rate (QBER).</p>
+                <p>The main challenge was bridging theoretical quantum physics with practical Python code using Qiskit. This project provided a deep appreciation for how physics-based principles can create next-generation security solutions.</p>
             </div>
-            
-            <!-- Right Column: Image and Key Details -->
             <div class="project-image-column">
                 <img src="project-qkd.png" alt="Quantum Secure Banking Project">
                 <aside class="project-sidebar">
@@ -71,10 +68,10 @@
     </main>
     
     <footer class="project-footer">
-        <p>© 2025 Karun Chakki. Crafted with code and creativity.</p>
+        <p>© 2024 Karun Chakki. Crafted with code and creativity.</p>
     </footer>
-
-    <script src="script.js"></script>
     
+    <!-- ✅ THIS IS THE FIX: Link to the JavaScript file -->
+    <script src="script.js"></script>
 </body>
 </html>
