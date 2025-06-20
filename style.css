@@ -140,7 +140,17 @@ body.light-mode .back-link { color: var(--text-secondary-light); }
 .project-hero h1 { font-size: 3.5rem; margin-bottom: 10px; color: var(--primary-color); }
 .project-hero .tagline { font-size: 1.2rem; color: var(--text-secondary-dark); margin-bottom: 40px; }
 body.light-mode .project-hero .tagline { color: var(--text-secondary-light); }
-.project-main-image { width: 100%; max-width: 900px; height: auto; object-fit: cover; border-radius: 12px; margin-bottom: 40px; display: inline-block; }
+/* ✅ THIS IS THE FIX: The project image is now constrained to a reasonable size */
+.project-main-image {
+    width: 100%;
+    max-width: 800px; /* Limits the maximum width */
+    max-height: 450px; /* Limits the maximum height */
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    display: inline-block;
+}
 .project-detail-content { max-width: 1200px; margin: 0 auto; padding: 0 10%; }
 .project-detail-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 60px; }
 .project-story h2 { font-size: 2rem; color: var(--secondary-color); margin-top: 20px; margin-bottom: 15px; }
@@ -149,7 +159,7 @@ body.light-mode .project-story p { color: var(--text-secondary-light); }
 .project-sidebar .sidebar-widget { background: var(--surface-dark); padding: 25px; border-radius: 12px; margin-bottom: 30px; }
 body.light-mode .project-sidebar .sidebar-widget { background: var(--surface-light); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
 .project-sidebar h3 { margin-top: 0; border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; margin-bottom: 20px; }
-.project-sidebar ul { list-stlye: none; padding: 0; }
+.project-sidebar ul { list-style: none; padding: 0; }
 .project-sidebar ul li { margin-bottom: 10px; display: flex; align-items: center; }
 .project-sidebar ul li i { margin-right: 12px; color: var(--primary-color); width: 20px; }
 .project-footer { text-align: center; padding: 40px; margin-top: 60px; color: #888; }
@@ -163,7 +173,7 @@ body.light-mode .project-sidebar .sidebar-widget { background: var(--surface-lig
 }
 
 @media (max-width: 768px) {
-    /* ✅ FIXED: Hero section now stacks correctly on mobile (Image > Text) */
+    /* Hero section stacks with image on top */
     .hero { flex-direction: column; text-align: center; }
     .hero-text { text-align: center; flex-basis: 100%; order: 2; } /* Text comes second */
     .hero-image { flex-basis: 100%; order: 1; margin-bottom: 40px; } /* Image comes first */
