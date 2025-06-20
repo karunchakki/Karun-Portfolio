@@ -10,8 +10,27 @@
 </head>
 <body class="project-detail-page">
 
-    <header class="project-header">
-        <a href="index.html#projects" class="back-link">← Back to All Projects</a>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Karun C.</a>
+            <ul class="nav-links" id="sidemenu">
+                <!-- Links now point back to the main page sections -->
+                <li><a href="index.html#about" onclick="closemenu()">About</a></li>
+                <li><a href="index.html#projects" onclick="closemenu()">Projects</a></li>
+                <li><a href="index.html#publications" onclick="closemenu()">Publications</a></li>
+                <li><a href="index.html#contact" onclick="closemenu()">Contact</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
+            </ul>
+            <div class="nav-right">
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch">
+                        <input type="checkbox" id="theme-toggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </div>
+        </nav>
     </header>
 
     <main>
@@ -53,6 +72,8 @@
     <footer class="project-footer">
         <p>© 2025 Karun Chakki. Crafted with code and creativity.</p>
     </footer>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
