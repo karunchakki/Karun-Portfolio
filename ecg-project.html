@@ -10,11 +10,11 @@
 </head>
 <body class="project-detail-page">
 
+    <!-- Universal Header -->
     <header>
         <nav>
             <a href="index.html" class="logo">Karun C.</a>
             <ul class="nav-links" id="sidemenu">
-                <!-- Links now point back to the main page sections -->
                 <li><a href="index.html#about" onclick="closemenu()">About</a></li>
                 <li><a href="index.html#projects" onclick="closemenu()">Projects</a></li>
                 <li><a href="index.html#publications" onclick="closemenu()">Publications</a></li>
@@ -40,14 +40,11 @@
         </section>
 
         <div class="project-main-content">
-            <!-- Left Column: Main Description -->
             <div class="project-info-column">
                 <h2>The Project Story</h2>
                 <p>Early and accurate detection of cardiovascular disease is critical for patient outcomes, but manual analysis of ECG signals can be time-consuming and subjective. I developed a complete machine learning pipeline to classify different types of cardiovascular diseases using ECG data, with research accepted for publication in an IEEE conference.</p>
                 <p>The project involved intensive data preprocessing to clean noisy signals, feature engineering to extract meaningful patterns (like R-R intervals and QRS complex duration), and training classification models. The primary challenge was the high level of noise in raw ECG data, which required sophisticated filtering techniques. This project provided deep insights into the end-to-end process of building a medical diagnostic tool.</p>
             </div>
-            
-            <!-- Right Column: Image and Key Details -->
             <div class="project-image-column">
                 <img src="project-ecg.png" alt="Cardiovascular Disease Detection Project">
                 <aside class="project-sidebar">
@@ -70,10 +67,10 @@
     </main>
     
     <footer class="project-footer">
-        <p>© 2025 Karun Chakki. Crafted with code and creativity.</p>
+        <p>© 2024 Karun Chakki. Crafted with code and creativity.</p>
     </footer>
 
+    <!-- ✅ THIS IS THE FIX: Link to the JavaScript file -->
     <script src="script.js"></script>
-
 </body>
 </html>
