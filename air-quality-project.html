@@ -10,11 +10,11 @@
 </head>
 <body class="project-detail-page">
 
+    <!-- Universal Header -->
     <header>
         <nav>
             <a href="index.html" class="logo">Karun C.</a>
             <ul class="nav-links" id="sidemenu">
-                <!-- Links now point back to the main page sections -->
                 <li><a href="index.html#about" onclick="closemenu()">About</a></li>
                 <li><a href="index.html#projects" onclick="closemenu()">Projects</a></li>
                 <li><a href="index.html#publications" onclick="closemenu()">Publications</a></li>
@@ -40,14 +40,11 @@
         </section>
 
         <div class="project-main-content">
-            <!-- Left Column: Main Description -->
             <div class="project-info-column">
                 <h2>The Project Story</h2>
                 <p>Air pollution is a major environmental and public health concern. The ability to accurately predict air quality in advance can help authorities issue warnings and citizens take precautionary measures. I developed a data-driven model to predict the Air Quality Index (AQI) using historical data on pollutants and meteorological factors.</p>
                 <p>The project involved extensive data cleaning, exploratory data analysis to find correlations, and feature engineering to create more predictive inputs. I trained a Decision Tree Regressor model, which proved effective in capturing the non-linear relationships in the data. Dealing with missing data and outliers was a significant challenge that required careful imputation strategies, providing a deep dive into the practical machine learning workflow.</p>
             </div>
-            
-            <!-- Right Column: Image and Key Details -->
             <div class="project-image-column">
                 <img src="https://images.unsplash.com/photo-1611273634353-91183c5ce526?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Air Quality Prediction Project">
                 <aside class="project-sidebar">
@@ -70,10 +67,10 @@
     </main>
     
     <footer class="project-footer">
-        <p>© 2025 Karun Chakki. Crafted with code and creativity.</p>
+        <p>© 2024 Karun Chakki. Crafted with code and creativity.</p>
     </footer>
 
+    <!-- ✅ THIS IS THE FIX: Link to the JavaScript file -->
     <script src="script.js"></script>
-
 </body>
 </html>
