@@ -76,3 +76,84 @@ function openmenu(){
 function closemenu(){
     sidemenu.style.right = "-200px";
 }
+
+// --- ✅ START: TSPARTICLES INITIALIZATION SCRIPT ---
+// This will only run if the #particles-js element exists (i.e., on your main page)
+if (document.getElementById('particles-js')) {
+    tsParticles.load("particles-js", {
+        fpsLimit: 60,
+        particles: {
+            number: {
+                value: 80,
+                density: {
+                    enable: true,
+                    value_area: 800
+                }
+            },
+            color: {
+                value: "#3A7DDE" // Primary color
+            },
+            shape: {
+                type: "circle"
+            },
+            opacity: {
+                value: 0.5,
+                random: true,
+                anim: {
+                    enable: true,
+                    speed: 1,
+                    opacity_min: 0.1,
+                    sync: false
+                }
+            },
+            size: {
+                value: 3,
+                random: true,
+                anim: {
+                    enable: false
+                }
+            },
+            line_linked: {
+                enable: true,
+                distance: 150,
+                color: "#8b949e", // Secondary text color
+                opacity: 0.4,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 2,
+                direction: "none",
+                random: false,
+                straight: false,
+                out_mode: "out",
+                bounce: false,
+            }
+        },
+        interactivity: {
+            detect_on: "canvas",
+            events: {
+                onhover: {
+                    enable: true,
+                    mode: "repulse"
+                },
+                onclick: {
+                    enable: true,
+                    mode: "push"
+                },
+                resize: true
+            },
+            modes: {
+                repulse: {
+                    distance: 100,
+                    duration: 0.4
+                },
+                push: {
+                    particles_nb: 4
+                }
+            }
+        },
+        detectRetina: true
+    });
+}
+// --- ✅ END: TSPARTICLES INITIALIZATION SCRIPT ---
