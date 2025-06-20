@@ -37,7 +37,7 @@ section { padding: 80px 10%; max-width: 1200px; margin: 0 auto; }
 .btn-primary { background-color: var(--primary-color); color: white; }
 .btn-secondary { background-color: transparent; border: 2px solid var(--primary-color); color: var(--primary-color); }
 
-/* --- HEADER & NAV --- */
+/* --- HEADER & NAV (Universal) --- */
 header { position: fixed; width: 100%; top: 0; z-index: 1000; background: rgba(16, 20, 24, 0.7); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); transition: top 0.3s; }
 body.light-mode header { background: rgba(247, 249, 252, 0.7); border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
 nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 10%; max-width: 1200px; margin: 0 auto; }
@@ -132,29 +132,9 @@ body.light-mode .social-links a { color: var(--text-secondary-light); }
 footer p { color: #888; font-size: 0.9rem; }
 
 
-/* --- ✅ START: PROJECT DETAIL PAGE STYLES (NEW LAYOUT) --- */
-body.project-detail-page header {
-    position: static;
-    background: transparent;
-    backdrop-filter: none;
-    border: none;
-}
-.project-header {
-    padding: 20px 10%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.back-link {
-    color: var(--text-secondary-dark);
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s;
-}
-body.light-mode .back-link {
-    color: var(--text-secondary-light);
-}
-.back-link:hover {
-    color: var(--primary-color);
+/* --- PROJECT DETAIL PAGE STYLES --- */
+body.project-detail-page main {
+    padding-top: 80px; /* ✅ FIX: Adds space for the fixed header */
 }
 .project-title-section {
     text-align: center;
@@ -178,8 +158,9 @@ body.light-mode .project-title-section .tagline {
     margin: 0 auto;
     padding: 0 10%;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
     gap: 60px;
+    align-items: flex-start;
 }
 .project-image-column img {
     width: 100%;
@@ -241,7 +222,6 @@ body.light-mode .project-sidebar .sidebar-widget {
     margin-top: 60px;
     color: #888;
 }
-/* --- END: PROJECT DETAIL PAGE STYLES --- */
 
 
 /* --- RESPONSIVE DESIGN --- */
@@ -250,6 +230,8 @@ body.light-mode .project-sidebar .sidebar-widget {
     .about-col-1 { display: none; } 
     .about-col-2 { flex-basis: 100%; }
     .project-main-content { grid-template-columns: 1fr; }
+    .project-image-column { order: 1; }
+    .project-info-column { order: 2; }
 }
 
 @media (max-width: 768px) {
