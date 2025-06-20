@@ -4,13 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project: Quantum Secure Banking | Karun Chakki</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="project-detail-page">
 
@@ -19,30 +15,24 @@
     </header>
 
     <main>
-        <section class="project-hero">
+        <section class="project-title-section">
             <h1>Quantum Secure Banking (QKD)</h1>
             <p class="tagline">A Python-based simulation of a quantum-proof financial system.</p>
-            <!-- ✅ New, reliable image link -->
-            <img src="project-qkd.png" alt="Quantum Secure Banking Project" class="project-main-image">
         </section>
 
-        <section class="project-detail-content">
-            <div class="project-detail-grid">
-                <!-- Left Column: The Story -->
-                <div class="project-story">
-                    <h2>The Problem</h2>
-                    <p>Traditional encryption methods are becoming increasingly vulnerable to the power of emerging quantum computers. A secure, future-proof method is needed to protect sensitive financial data from being compromised.</p>
-                    
-                    <h2>My Solution</h2>
-                    <p>I developed a simulation that uses the principles of quantum mechanics to secure financial transactions. By implementing the BB84 Quantum Key Distribution (QKD) protocol, the system allows two parties to generate a shared, secret key that is provably secure. Any attempt to eavesdrop on the key exchange introduces detectable errors, immediately alerting the system to a breach.</p>
-
-                    <h2>Challenges & Lessons Learned</h2>
-                    <p>The main challenge was bridging the gap between theoretical quantum physics and practical Python code. Working with the Qiskit library required a deep dive into quantum states and measurements. This project taught me the importance of robust error handling and gave me a profound appreciation for how physics-based principles can create next-generation security solutions.</p>
-                </div>
-
-                <!-- Right Column: Key Details -->
-                <div class="project-sidebar">
-                    <div class="sidebar-widget">
+        <div class="project-main-content">
+            <!-- Left Column: Main Description -->
+            <div class="project-info-column">
+                <h2>The Project Story</h2>
+                <p>Traditional encryption methods are becoming increasingly vulnerable to the power of emerging quantum computers. My solution was to develop a simulation that uses the principles of quantum mechanics to secure financial transactions. By implementing the BB84 Quantum Key Distribution (QKD) protocol, the system allows two parties to generate a shared, secret key that is provably secure.</p>
+                <p>Any attempt to eavesdrop on the key exchange introduces detectable errors, immediately alerting the system to a breach. The main challenge was bridging the gap between theoretical quantum physics and practical Python code using Qiskit. This project taught me the importance of robust error handling and gave me a profound appreciation for how physics-based principles can create next-generation security solutions.</p>
+            </div>
+            
+            <!-- Right Column: Image and Key Details -->
+            <div class="project-image-column">
+                <img src="project-qkd.png" alt="Quantum Secure Banking Project">
+                <aside class="project-sidebar">
+                     <div class="sidebar-widget">
                         <h3>Technology Stack</h3>
                         <ul>
                             <li><i class="fab fa-python"></i> Python</li>
@@ -52,22 +42,13 @@
                             <li><i class="fas fa-shield-alt"></i> AES Encryption</li>
                         </ul>
                     </div>
-                    <div class="sidebar-widget">
-                        <h3>Key Features</h3>
-                        <ul>
-                            <li>BB84 protocol for secure key exchange.</li>
-                            <li>Quantum Bit Error Rate (QBER) calculation to detect eavesdropping.</li>
-                            <li>AES-256 for encrypting transaction logs.</li>
-                            <li>Web interface to simulate transactions.</li>
-                        </ul>
-                    </div>
-                    <div class="sidebar-widget">
+                     <div class="sidebar-widget">
                         <h3>Project Link</h3>
                         <a href="https://github.com/karunchakki/Quantum-Secure-Banking" class="btn btn-primary" target="_blank">View on GitHub</a>
                     </div>
-                </div>
+                </aside>
             </div>
-        </section>
+        </div>
     </main>
     
     <footer class="project-footer">
