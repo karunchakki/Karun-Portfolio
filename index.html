@@ -1,40 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karun Chakki | Tech, AI & Product Explorer</title>
 
     <!-- Primary Meta Tags -->
-    <title>Karun Chakki | Tech, AI & Product Explorer</title>
-    <meta name="title" content="Karun Chakki | Tech, AI & Product Explorer" />
-    <meta name="description" content="Portfolio of Karun Chakki – Driven by curiosity to build impactful solutions across tech and healthcare. GeeksforGeeks-certified Product Manager with expertise in IoT, embedded systems, AI/ML, and bioelectronics." />
-    <meta name="keywords" content="Karun Chakki, Portfolio, Product Manager, AI, ML, IoT, Embedded Systems, Bioelectronics, Healthcare Tech, Developer, Engineering, Tech Explorer, GeeksforGeeks, React, Frontend" />
-    <meta name="author" content="Karun Chakki" />
+    <meta name="title" content="Karun Chakki | Tech, AI & Product Explorer">
+    <meta name="description" content="Portfolio of Karun Chakki – Driven by curiosity to build impactful solutions across tech and healthcare. GeeksforGeeks-certified Product Manager with expertise in IoT, embedded systems, AI/ML, and bioelectronics.">
+    <meta name="keywords" content="Karun Chakki, Portfolio, Product Manager, AI, ML, IoT, Embedded Systems, Bioelectronics, Healthcare Tech, Developer, Engineering, Tech Explorer, GeeksforGeeks">
+    <meta name="author" content="Karun Chakki">
 
     <!-- Open Graph / Facebook Meta Tags -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://yourportfolio.com/" /> <!-- Replace with your actual portfolio URL -->
-    <meta property="og:title" content="Karun Chakki | Tech, AI & Product Explorer" />
-    <meta property="og:description" content="Portfolio of Karun Chakki – Driven by curiosity to build impactful solutions across tech and healthcare. GeeksforGeeks-certified Product Manager with expertise in IoT, embedded systems, AI/ML, and bioelectronics." />
-    <meta property="og:image" content="https://yourportfolio.com/images/og-image.jpg" /> <!-- Create an OG image (e.g., 1200x630px) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourportfolio.com/">
+    <meta property="og:title" content="Karun Chakki | Tech, AI & Product Explorer">
+    <meta property="og:description" content="Portfolio of Karun Chakki – Driven by curiosity to build impactful solutions across tech and healthcare. GeeksforGeeks-certified Product Manager with expertise in IoT, embedded systems, AI/ML, and bioelectronics.">
+    <meta property="og:image" content="https://yourportfolio.com/images/og-image.jpg">
 
     <!-- Twitter Meta Tags -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://yourportfolio.com/" /> <!-- Replace with your actual portfolio URL -->
-    <meta property="twitter:title" content="Karun Chakki | Tech, AI & Product Explorer" />
-    <meta property="twitter:description" content="Portfolio of Karun Chakki – Driven by curiosity to build impactful solutions across tech and healthcare. GeeksforGeeks-certified Product Manager with expertise in IoT, embedded systems, AI/ML, and bioelectronics." />
-    <meta property="twitter:image" content="https://yourportfolio.com/images/twitter-image.jpg" /> <!-- Create a Twitter image (e.g., 1200x675px) -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourportfolio.com/">
+    <meta property="twitter:title" content="Karun Chakki | Tech, AI & Product Explorer">
+    <meta property="twitter:description" content="Portfolio of Karun Chakki – Driven by curiosity to build impactful solutions across tech and healthcare. GeeksforGeeks-certified Product Manager with expertise in IoT, embedded systems, AI/ML, and bioelectronics.">
+    <meta property="twitter:image" content="https://yourportfolio.com/images/twitter-image.jpg">
 
-    <!-- Preload Fonts for performance -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Preload Fonts -->
     <link rel="preload" href="https://rsms.me/inter/inter.css" as="style" crossorigin>
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="script.css">
 </head>
 <body>
-    <!-- This is where your React app will be mounted -->
-    <div id="root"></div>
+    <header id="header" class="header">
+        <div class="container header-content">
+            <a href="#" class="logo">Karun Chakki</a>
+            <nav class="nav-menu">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#publications">Publications</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <svg class="icon sun-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.472 4.472a.75.75 0 011.06 0l1.414 1.414a.75.75 0 01-1.06 1.06L7.472 5.532a.75.75 0 010-1.06zM2.25 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H3a.75.75 0 01-.75-.75zM4.472 16.528a.75.75 0 010-1.06l1.414-1.414a.75.75 0 011.06 1.06l-1.414 1.414a.75.75 0 01-1.06 0zM12 17.25a.75.75 0 01-.75.75v2.25a.75.75 0 011.5 0v-2.25a.75.75 0 01-.75-.75zM16.528 19.528a.75.75 0 01-1.06 0l-1.414-1.414a.75.75 0 011.06-1.06l1.414 1.414a.75.75 0 010 1.06zM17.25 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5h-2.25a.75.75 0 01-.75-.75zM19.528 7.472a.75.75 0 010 1.06l-1.414 1.414a.75.75 0 01-1.06-1.06l1.414-1.414a.75.75 0 011.06 0z" />
+                </svg>
+                <svg class="icon moon-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.106.852 6.5 6.5 0 11-8.597 8.597.75.75 0 01-.853-.106l-.04-.04a.75.75 0 010-1.061l.04-.04a8 8 0 1010.518-10.518z" clip-rule="evenodd" />
+                </svg>
+            </button>
+        </div>
+    </header>
 
-    <!-- Your React application's entry point -->
-    <script type="module" src="/src/main.tsx"></script>
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="orb orb-blue"></div>
+            <div class="orb orb-purple"></div>
+
+            <div class="container hero-content-wrapper">
+                <div class="hero-text-wrapper">
+                    <h1>
+                        Hi, I'm Karun Chakki<br>
+                        <span class="hero-gradient-text">Exploring in Tech, AI & Product</span>
+                    </h1>
+                    <p class="hero-bio">
+                        Driven by curiosity to build impactful solutions across tech and healthcare.
+                        GeeksforGeeks-certified Product Manager with expertise in IoT, embedded systems,
+                        AI/ML, and bioelectronics. I transform complex technical challenges into
+                        user-centric products that make a difference.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get in Touch</button>
+                        <button class="btn btn-outline" id="download-resume">Download Resume</button>
+                    </div>
+                </div>
+
+                <div class="profile-photo-wrapper">
+                    <div class="profile-photo-ring">
+                        <img src="/images/karun-chakki-profile.jpg" alt="Karun Chakki" class="profile-photo">
+                        <div class="profile-photo-glow"></div>
+                    </div>
+                    <div class="badge-available">Available for hire</div>
+                </div>
+
+                <div class="scroll-indicator">
+                    <p>Scroll to explore</p>
+                    <svg class="scroll-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Placeholder Sections for other content -->
+        <section id="about" class="section-placeholder">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>This is where the About section content would go.</p>
+                <div class="about-cards">
+                    <!-- Placeholder for highlight cards -->
+                    <div class="card"><h3>Leadership</h3><p>Guiding teams to success.</p></div>
+                    <div class="card"><h3>Innovation</h3><p>Driving cutting-edge solutions.</p></div>
+                    <div class="card"><h3>Strategy</h3><p>Crafting product roadmaps.</p></div>
+                    <div class="card"><h3>Analytics</h3><p>Data-driven decision making.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section-placeholder">
+            <div class="container">
+                <h2>My Skills</h2>
+                <p>This is where the Skills section content would go.</p>
+            </div>
+        </section>
+
+        <section id="projects" class="section-placeholder">
+            <div class="container">
+                <h2>My Projects</h2>
+                <p>This is where the Projects section content would go.</p>
+            </div>
+        </section>
+
+        <section id="education" class="section-placeholder">
+            <div class="container">
+                <h2>Education</h2>
+                <p>This is where the Education section content would go.</p>
+            </div>
+        </section>
+
+        <section id="publications" class="section-placeholder">
+            <div class="container">
+                <h2>Publications & Certifications</h2>
+                <p>This is where the Publications and Certifications section content would go.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="section-placeholder">
+            <div class="container">
+                <h2>Get in Touch</h2>
+                <p>This is where the Contact section content and form would go.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>Karun Chakki</h3>
+                <p>Exploring in Tech, AI & Product</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <a href="https://github.com/yourprofile" target="_blank" aria-label="GitHub"><svg class="icon" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.83 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.953 0-1.09.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.099 2.65c.64.7 1.028 1.598 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.523 2 12 2z" clip-rule="evenodd"></path></svg></a>
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn"><svg class="icon" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                    <!-- Add more social icons as needed -->
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year"></span> Karun Chakki. All rights reserved. Made with ❤️</p>
+        </div>
+    </footer>
+
+    <!-- Link to your JavaScript file -->
+    <script src="script.js"></script>
 </body>
 </html>
