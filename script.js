@@ -1,183 +1,96 @@
-// script.js
+// script.js - Interactions for Karun Chakki portfolio
 
-// 1. DOM Content Loaded Listener
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM fully loaded and parsed');
-    initThemeToggle();
-    initHeaderScrollEffect();
-    initHeroButtons(); // Initialize hero section buttons
-});
+(function() {
+  const html = document.documentElement;
+  const header = document.getElementById('header');
+  const themeToggle = document.getElementById('theme-toggle');
+  const mobileBtn = document.getElementById('mobile-menu-btn');
+  const mobileNav = document.getElementById('mobile-nav');
 
-// 2. Theme Toggle Functionality
-function initThemeToggle() {
-    const themeToggle = document.getElementById('theme-toggle');
-    if (!themeToggle) {
-        console.warn('Theme toggle button not found.');
-        return;
-    }
-
-    // Function to set the theme
-    const setTheme = (theme) => {
-        if (theme === 'dark') {
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('theme', 'dark');
-            console.log('Theme set to dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('theme', 'light');
-            console.log('Theme set to light');
-        }
-    };
-
-    // Get preferred theme from localStorage or system preference
-    const storedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    // Apply initial theme
-    if (storedTheme) {
-        setTheme(storedTheme);
-    } else if (prefersDark) {
-        setTheme('dark');
-    } else {
-        setTheme('light'); // Default to light if no preference
-    }
-
-    // Toggle theme on button click
+  // Dark Mode Management
+  const THEME_KEY = 'karun-theme';
+  function getPreferredTheme() {
+    const stored = localStorage.getItem(THEME_KEY);
+    if (stored === 'dark' || stored === 'light') return stored;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  function applyTheme(theme) {
+    if (theme === 'dark') html.classList.add('dark');
+    else html.classList.remove('dark');
+    if (themeToggle) themeToggle.querySelector('.theme-icon').textContent = theme === 'dark' ? '🌞' : '🌙';
+  }
+  function setTheme(theme) {
+    localStorage.setItem(THEME_KEY, theme);
+    applyTheme(theme);
+  }
+  applyTheme(getPreferredTheme());
+  if (themeToggle) {
     themeToggle.addEventListener('click', () => {
-        const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-        setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+      const next = html.classList.contains('dark') ? 'light' : 'dark';
+      setTheme(next);
     });
-
-    // Listen for system theme changes (optional, but good for UX)
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
-        if (!localStorage.getItem('theme')) { // Only update if user hasn't manually set a preference
-            setTheme(event.matches ? 'dark' : 'light');
-        }
+  }
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      const stored = localStorage.getItem(THEME_KEY);
+      if (stored !== 'dark' && stored !== 'light') {
+        applyTheme(e.matches ? 'dark' : 'light');
+      }
     });
-}
+  }
 
-// 3. Header Scroll Effect
-function initHeaderScrollEffect() {
-    const header = document.querySelector('.header');
-    if (!header) {
-        console.warn('Header element not found.');
-        return;
+  // Header Scroll State
+  function onScroll() {
+    if (!header) return;
+    const scrolled = window.scrollY > 50;
+    header.classList.toggle('scrolled', scrolled);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Smooth scroll for nav links
+  function handleAnchorClick(e) {
+    const href = this.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+        if (mobileNav) mobileNav.classList.remove('open');
+      }
     }
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', handleAnchorClick));
 
-    let lastScrollY = window.scrollY;
-    const scrollThreshold = 50; // Pixels to scroll before adding the class
-
-    const updateHeaderOnScroll = () => {
-        if (window.scrollY > scrollThreshold) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-        lastScrollY = window.scrollY;
-    };
-
-    // Initial check in case the page loads scrolled
-    updateHeaderOnScroll();
-
-    // Listen for scroll events
-    window.addEventListener('scroll', () => {
-        requestAnimationFrame(updateHeaderOnScroll);
-    }, { passive: true }); // Use passive listener for performance
-}
-
-// 4. Smooth Scrolling for Navigation Links
-function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-
-            if (targetElement) {
-                // Adjust for fixed header height
-                const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
-                const offsetTop = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight;
-
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        });
+  // Mobile Menu
+  if (mobileBtn && mobileNav) {
+    mobileBtn.addEventListener('click', () => {
+      mobileNav.classList.toggle('open');
     });
-}
+  }
 
-// 5. Hero Section Button Actions (Example)
-function initHeroButtons() {
-    const primaryButton = document.querySelector('.hero-buttons .btn-primary');
-    const outlineButton = document.querySelector('.hero-buttons .btn-outline');
-
-    if (primaryButton) {
-        primaryButton.addEventListener('click', () => {
-            alert('Primary button clicked! (e.g., "Hire Me")');
-            // Example: Smooth scroll to a contact section
-            // const contactSection = document.getElementById('contact');
-            // if (contactSection) {
-            //     contactSection.scrollIntoView({ behavior: 'smooth' });
-            // }
-        });
-    }
-
-    if (outlineButton) {
-        outlineButton.addEventListener('click', () => {
-            alert('Outline button clicked! (e.g., "View Portfolio")');
-            // Example: Smooth scroll to a portfolio section
-            // const portfolioSection = document.getElementById('portfolio');
-            // if (portfolioSection) {
-            //     portfolioSection.scrollIntoView({ behavior: 'smooth' });
-            // }
-        });
-    }
-}
-
-// 6. Intersection Observer for elements (e.g., fade-in effects)
-function initIntersectionObserver() {
-    const faders = document.querySelectorAll('.fade-in'); // Example class for elements to fade in
-
-    const appearOptions = {
-        threshold: 0.2, // When 20% of the element is visible
-        rootMargin: "0px 0px -50px 0px" // Start appearing a bit before reaching bottom of viewport
-    };
-
-    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                return;
-            }
-            entry.target.classList.add('appeared'); // Add a class to trigger fade-in CSS
-            appearOnScroll.unobserve(entry.target); // Stop observing once it has appeared
-        });
-    }, appearOptions);
-
-    faders.forEach(fader => {
-        appearOnScroll.observe(fader);
+  // Project filter buttons
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+  filterButtons.forEach(btn => btn.addEventListener('click', function() {
+    const filter = btn.getAttribute('data-filter');
+    filterButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    projectCards.forEach(card => {
+      const cat = card.getAttribute('data-category');
+      card.style.display = (filter === 'all' || cat === filter) ? 'block' : 'none';
     });
-}
+  }));
 
-// Example CSS for the fade-in effect:
-/*
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.fade-in.appeared {
-    opacity: 1;
-    transform: translateY(0);
-}
-*/
-
-// Call other initialization functions here if needed
-document.addEventListener('DOMContentLoaded', () => {
-    initThemeToggle();
-    initHeaderScrollEffect();
-    initSmoothScroll(); // Ensure smooth scroll is initialized
-    initHeroButtons();
-    // initIntersectionObserver(); // Uncomment if you add elements with .fade-in class
-});
+  // Intersection reveal animation stub (add 'reveal' class if you want intersection fade-ins!)
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+})();
