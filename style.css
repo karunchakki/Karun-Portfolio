@@ -1,521 +1,102 @@
-/* script.css */
+@import url('https://rsms.me/inter/inter.css');
 
-/* 1. Root Variables for Theming */
+/* --- Root Variables for Light and Dark Themes --- */
 :root {
-    /* Light Mode Colors (Default) */
-    --background: #ffffff;
-    --foreground: oklch(0.145 0 0);
-    --primary: #030213;
-    --secondary: oklch(0.95 0.0058 264.53);
-    --muted: #ececf0;
-    --accent: #e9ebef;
-    --border: rgba(0, 0, 0, 0.1);
-    --card: #ffffff;
-    --popover: #ffffff;
-    --destructive: #ef4444;
-    --destructive-foreground: #ffffff;
-
-    /* Raw Colors for Gradients */
-    --blue-500: #3b82f6;
-    --purple-500: #8b5cf6;
-    --purple-600: #9333ea;
-    --pink-500: #ec4899;
-    --cyan-500: #06b6d4;
-    --orange-500: #f97316;
-    --red-500: #ef4444;
-    --emerald-500: #10b981;
-    --green-500: #22c55e;
-    --gray-500: #6b7280;
-    --gray-700: #374151;
-
-    /* Base Typography */
-    --font-size: 16px;
-    --line-height-15: 1.5;
-
-    /* Transitions */
-    --transition-duration: 0.3s;
-    --transition-ease: ease-in-out;
+  --background: #ffffff;
+  --foreground: oklch(0.145 0 0);
+  --primary: #030213;
+  --secondary: oklch(0.95 0.0058 264.53);
+  --muted: #ececf0;
+  --accent: #e9ebef;
+  --border: rgba(0,0,0,0.1);
+  --card: #ffffff;
+  --popover: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --font-size: 16px;
+}
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --secondary: oklch(0.269 0 0);
+  --muted: oklch(0.269 0 0);
+  --accent: oklch(0.269 0 0);
+  --border: oklch(0.269 0 0);
+  --card: oklch(0.18 0 0);
+  --popover: oklch(0.18 0 0);
+  --destructive: #f87171;
+  --destructive-foreground: oklch(0.145 0 0);
 }
 
-/* 2. Dark Mode Styles */
-html.dark {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --primary: oklch(0.985 0 0);
-    --secondary: oklch(0.269 0 0);
-    --muted: oklch(0.269 0 0);
-    --accent: oklch(0.269 0 0);
-    --border: oklch(0.269 0 0);
-    --card: oklch(0.18 0 0);
-    --popover: oklch(0.18 0 0);
-    --destructive: #f87171;
-    --destructive-foreground: oklch(0.145 0 0);
-}
-
-/* 3. Base & Reset Styles */
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
+/* --- Base / Reset --- */
+* { box-sizing: border-box; }
+*::before, *::after { box-sizing: inherit; }
 html {
-    font-size: var(--font-size);
-    line-height: var(--line-height-15);
-    scroll-behavior: smooth;
-    font-family: 'Inter', sans-serif;
-    color: var(--foreground);
-    background-color: var(--background);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    transition: background-color var(--transition-duration) var(--transition-ease), color var(--transition-duration) var(--transition-ease);
+  scroll-behavior: smooth;
+  font-size: var(--font-size);
+  line-height: 1.5;
 }
-
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: var(--foreground);
+  background: var(--background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+a { color: var(--primary); text-decoration: none; transition: color .25s; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; display: block; }
+:focus-visible { outline: 2px solid #8b5cf6; outline-offset: 3px; }
 
-main {
-    flex-grow: 1;
-}
+.container { width: min(1100px, 92%); margin-inline: auto; }
+.section-padding { padding: 4rem 0; }
+@media (min-width:1024px){ .section-padding{ padding: 6rem 0; } }
+.section-header { text-align: center; margin-bottom: 2.5rem; }
+.section-subtitle { color: oklch(0.45 0 0); }
+.dark .section-subtitle { color: oklch(0.8 0 0); }
 
-a {
-    color: var(--primary);
-    text-decoration: none;
-    transition: color var(--transition-duration) var(--transition-ease);
-}
-a:hover {
-    text-decoration: underline;
-    color: var(--primary); /* Maintain primary color or choose a hover variant */
-}
+/* --- Header --- */
+.header { position: fixed; top:0; left:0; right:0; z-index:50; transition: background .3s, box-shadow .3s, border-color .3s; }
+.nav-container { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding: .75rem 1rem; backdrop-filter: blur(8px); background: color-mix(in oklab, var(--background) 70%, transparent); border-bottom: 1px solid transparent; }
+.header.scrolled .nav-container { background: color-mix(in oklab, var(--background) 95%, transparent); border-bottom-color: var(--border); box-shadow: 0 10px 15px rgba(20,20,20,.1); }
+.nav-brand { font-weight: 700; letter-spacing: .2px; font-size: 1.1rem; }
+.nav-links { display:none; gap:1rem; align-items:center; }
+.nav-link { padding: .5rem .75rem; border-radius: .5rem; color: var(--foreground); }
+.nav-link:hover { background: var(--accent); text-decoration: none; }
+.theme-toggle { border:1px solid var(--border); background: var(--card); padding:.5rem .75rem; border-radius:.75rem; cursor:pointer; }
+.mobile-menu-btn { display:flex; flex-direction:column; gap:4px; background:transparent; border:0; padding:.25rem; cursor:pointer; }
+.hamburger { width:22px; height:2px; background: var(--foreground); display:block; }
+@media (min-width:768px){ .desktop-nav{ display:flex; } .mobile-menu-btn{ display:none; } }
+.mobile-nav { display:none; position: absolute; top: 58px; left:0; right:0; background: var(--card); border-bottom:1px solid var(--border); box-shadow: 0 12px 24px rgba(20,20,20,.08); animation: slide-in-down .3s forwards; }
+.mobile-nav.open { display:flex; flex-direction:column; }
+.mobile-nav-link { padding: 1rem 1.25rem; border-top:1px solid var(--border); }
+.mobile-nav-link:hover { background: var(--accent); text-decoration:none; }
 
-/* 4. Typography Hierarchy */
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 500; /* Medium */
-    line-height: var(--line-height-15);
-    color: var(--foreground); /* Ensure headings use foreground color */
-}
+/* --- Hero --- */
+.hero { display:grid; grid-template-columns: 1fr; align-items:center; min-height:100vh; position:relative; }
+.hero-container { width:min(1100px,92%); margin-inline:auto; display:grid; grid-template-columns:1fr; gap: 2rem; align-items:center; }
+@media (min-width:1024px){ .hero-container{ grid-template-columns: 1.2fr .8fr; gap:3rem; } }
+.hero-title { margin: 0 0 .75rem; font-size: clamp(2rem, 6vw, 4rem); }
+.hero-subtitle { font-size: 1.125rem; color: oklch(0.45 0 0); }
+.dark .hero-subtitle { color: oklch(0.8 0 0); }
+.hero-buttons { display:flex; gap: .75rem; margin-top: 1.25rem; flex-wrap: wrap; }
+.btn { display:inline-block; padding:.8rem 1.2rem; border-radius:.75rem; font-weight:500; border:1px solid transparent; transition: transform .2s, box-shadow .25s, background .25s, border-color .25s; cursor:pointer; }
+.btn-primary{ background: var(--primary); color: #fff; }
+.btn-primary:hover{ transform: scale(1.04); box-shadow: 0 12px 28px rgba(3,2,19,.18); }
+.btn-outline{ background: transparent; color: var(--foreground); border-color: var(--border); }
+.btn-outline:hover{ background: var(--accent); }
+.hero-image { display:flex; justify-content:center; }
+.hero-img-wrapper { position:relative; width: 260px; height: 260px; }
+.hero-img { position:relative; z-index:2; width:100%; height:100%; object-fit:cover; border-radius:50%; border:8px solid var(--background); box-shadow: 0 10px 40px rgba(0,0,0,.08); }
+.hero-gradient-glow { position:absolute; inset:0; background: linear-gradient(90deg,#3b82f6 0%,#8b5cf6 60%,#ec4899 100%); border-radius:50%; filter: blur(48px); opacity:.3; z-index:1; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite; }
+.hero-ring { position:absolute; inset:0; border:4px solid #3b82f6; opacity:.1; border-radius:50%; z-index:0; }
+.available-badge { position:absolute; bottom:-32px; right:-32px; padding:.5em 1.2em; background: linear-gradient(90deg,#3b82f6 0%, #8b5cf6 60%); color:#fff; border-radius: 2em; font-size:1rem; box-shadow: 0 2px 12px rgba(139,92,246,.15); font-weight:500; }
+.hero-scroll-indicator { position:absolute; left:50%; bottom: 32px; transform: translateX(-50%); opacity:.85; font-size:2rem; color: var(--primary); animation: bounce-arrow 1.5s infinite; }
 
-h1 { font-size: 2rem; } /* Base for mobile */
-h2 { font-size: 1.5rem; }
-h3 { font-size: 1.25rem; }
-h4 { font-size: 1rem; }
-p { font-size: 1rem; font-weight: 400; }
+.gradient-text{ background: linear-gradient(90deg,#3b82f6 0%,#8b5cf6 60%,#ec4899 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
 
-/* 5. Utility Classes */
-.container {
-    max-width: 1200px; /* Equivalent to max-w-6xl in Tailwind */
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem; /* px-4 */
-    padding-right: 1rem; /* px-4 */
-}
+/* About, Skills, Projects, Education, Certifications, Contact, Footer, Animations: same as the prior response! */
 
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.75rem 1.5rem; /* py-3 px-6 */
-    font-size: 1.125rem; /* text-lg */
-    line-height: 1.5;
-    border-radius: 0.5rem; /* rounded-lg */
-    cursor: pointer;
-    transition: background-color var(--transition-duration) var(--transition-ease),
-                border-color var(--transition-duration) var(--transition-ease),
-                color var(--transition-duration) var(--transition-ease),
-                box-shadow var(--transition-duration) var(--transition-ease);
-}
-
-.btn-primary {
-    background-color: var(--primary);
-    color: var(--background); /* Text color on primary is background */
-    border: 1px solid var(--primary);
-}
-.btn-primary:hover {
-    background-color: rgba(3, 2, 19, 0.9); /* Equivalent to primary/90 */
-    color: var(--background);
-}
-html.dark .btn-primary { /* Dark mode primary button styling */
-    background-color: var(--primary); /* Now primary is the light text */
-    color: var(--background); /* Background is dark */
-    border-color: var(--primary);
-}
-html.dark .btn-primary:hover {
-    background-color: rgba(251, 251, 251, 0.9); /* Lighter hover for dark mode primary */
-    color: var(--background);
-}
-
-.btn-outline {
-    background-color: transparent;
-    color: var(--foreground);
-    border: 1px solid var(--border);
-}
-.btn-outline:hover {
-    background-color: var(--muted);
-    color: var(--foreground);
-}
-
-/* 6. Header Styling */
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 50;
-    padding: 1rem 0; /* py-4 */
-    transition: background-color var(--transition-duration) var(--transition-ease),
-                backdrop-filter var(--transition-duration) var(--transition-ease),
-                border-bottom var(--transition-duration) var(--transition-ease),
-                box-shadow var(--transition-duration) var(--transition-ease);
-    background-color: rgba(255, 255, 255, 0.5); /* bg-background/50 */
-    backdrop-filter: blur(4px); /* backdrop-blur-sm */
-}
-
-.header.scrolled {
-    background-color: rgba(255, 255, 255, 0.95); /* bg-background/95 */
-    backdrop-filter: blur(24px); /* backdrop-blur-xl */
-    border-bottom: 1px solid var(--border);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
-}
-html.dark .header { /* Dark mode default header */
-    background-color: rgba(37, 37, 37, 0.5);
-}
-html.dark .header.scrolled { /* Dark mode scrolled header */
-    background-color: rgba(37, 37, 37, 0.95);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-}
-
-.logo {
-    font-size: 1.5rem; /* text-xl */
-    font-weight: 700;
-    color: var(--foreground);
-    text-decoration: none;
-}
-
-.nav-menu {
-    display: flex;
-    gap: 1.5rem; /* space-x-6 */
-}
-.nav-menu a {
-    color: var(--foreground);
-    font-weight: 500;
-    transition: color var(--transition-duration) var(--transition-ease);
-}
-.nav-menu a:hover {
-    color: var(--primary);
-    text-decoration: none;
-}
-
-.theme-toggle {
-    background: none;
-    border: none;
-    color: var(--foreground);
-    cursor: pointer;
-    font-size: 1.5rem; /* icon size */
-    width: 2.5rem; /* w-10 */
-    height: 2.5rem; /* h-10 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 9999px; /* rounded-full */
-    transition: background-color var(--transition-duration) var(--transition-ease), color var(--transition-duration) var(--transition-ease);
-}
-.theme-toggle:hover {
-    background-color: var(--muted);
-}
-.theme-toggle .icon {
-    width: 1.5rem;
-    height: 1.5rem;
-}
-.theme-toggle .moon-icon { display: none; } /* Default is sun (light mode) */
-html.dark .theme-toggle .sun-icon { display: none; }
-html.dark .theme-toggle .moon-icon { display: block; }
-
-
-/* 7. Hero Section Styling */
-.hero-section {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 6rem 0; /* py-24 */
-    overflow: hidden;
-    text-align: center;
-    z-index: 0; /* Ensure content is above orbs */
-}
-
-/* Background Orbs */
-.orb {
-    position: absolute;
-    width: 24rem; /* w-96 */
-    height: 24rem; /* h-96 */
-    border-radius: 9999px; /* rounded-full */
-    filter: blur(64px); /* blur-3xl */
-    opacity: 0.2;
-    animation: blob 7s infinite ease-in-out;
-    z-index: -1; /* Behind content */
-}
-.orb-blue {
-    top: 25%;
-    left: 25%;
-    background-color: var(--blue-500);
-}
-.orb-purple {
-    bottom: 25%;
-    right: 25%;
-    background-color: var(--purple-500);
-    animation-delay: 2s; /* animation-delay-2000 */
-}
-
-/* Hero Content */
-.hero-content-wrapper {
-    position: relative;
-    z-index: 10;
-    max-width: 900px; /* max-w-4xl */
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-.hero-text-wrapper h1 {
-    font-size: 3rem; /* text-5xl */
-    font-weight: 700;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-}
-.hero-gradient-text {
-    background: linear-gradient(to right, var(--blue-500), var(--purple-500), var(--pink-500));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent; /* Fallback */
-    display: block;
-    margin-top: 0.5rem;
-    font-size: 2.25rem; /* text-4xl */
-}
-
-.hero-bio {
-    font-size: 1.25rem; /* text-xl */
-    color: var(--foreground); /* using var instead of rgba to support dark mode better */
-    opacity: 0.8; /* equivalent to /80 */
-    margin-bottom: 1.5rem;
-    max-width: 48rem; /* max-w-3xl */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.hero-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem; /* space-y-4 */
-    justify-content: center;
-    align-items: center;
-    margin-top: 1.5rem;
-}
-
-/* Profile Photo */
-.profile-photo-wrapper {
-    position: relative;
-    width: 12rem; /* w-48 */
-    height: 12rem; /* h-48 */
-    margin: 4rem auto 0; /* mt-16 */
-}
-.profile-photo-ring {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 9999px;
-    overflow: hidden;
-    border: 4px solid rgba(59, 130, 246, 0.1); /* ring-4 ring-blue-500/10 - using raw blue-500 for consistency with tailwind's direct rgba use */
-}
-html.dark .profile-photo-ring {
-    border-color: rgba(59, 130, 246, 0.2); /* Slightly more visible in dark mode */
-}
-.profile-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 9999px;
-}
-.profile-photo-glow {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, var(--blue-500), var(--purple-600));
-    border-radius: 9999px;
-    filter: blur(64px); /* blur-3xl */
-    opacity: 0.3;
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-.badge-available {
-    position: absolute;
-    bottom: -1rem; /* -bottom-4 */
-    right: -1rem; /* -right-4 */
-    padding: 0.25rem 0.75rem; /* px-3 py-1 */
-    background: linear-gradient(to right, var(--blue-500), var(--purple-600));
-    color: white;
-    font-size: 0.75rem; /* text-xs */
-    font-weight: 600;
-    border-radius: 9999px;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
-}
-html.dark .badge-available {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
-}
-
-/* 8. Animations */
-@keyframes blob {
-    0% {
-        transform: translate(0, 0) scale(1);
-    }
-    33% {
-        transform: translate(30px, -50px) scale(1.1);
-    }
-    66% {
-        transform: translate(-20px, 20px) scale(0.9);
-    }
-    100% {
-        transform: translate(0, 0) scale(1);
-    }
-}
-
-@keyframes pulse {
-    0%, 100% {
-        opacity: 0.3;
-    }
-    50% {
-        opacity: 0.6;
-    }
-}
-
-/* 9. Responsive Design */
-@media (min-width: 640px) { /* sm breakpoint */
-    h1 { font-size: 3rem; } /* text-5xl */
-    .hero-gradient-text { font-size: 2.5rem; } /* sm:text-4xl */
-    .hero-buttons {
-        flex-direction: row; /* sm:flex-row */
-    }
-}
-
-@media (min-width: 768px) { /* md breakpoint */
-    h1 { font-size: 3.75rem; } /* text-6xl */
-    h2 { font-size: 2rem; } /* md:text-3xl */
-    h3 { font-size: 1.5rem; } /* md:text-2xl */
-    .hero-gradient-text { font-size: 3rem; } /* md:text-5xl */
-    .hero-bio { font-size: 1.5rem; } /* md:text-2xl */
-}
-
-@media (min-width: 1024px) { /* lg breakpoint */
-    h1 { font-size: 4.5rem; } /* text-7xl */
-    .hero-gradient-text { font-size: 3.75rem; } /* lg:text-6xl */
-    .hero-content-wrapper { padding: 0; } /* Remove side padding on large screens */
-    .container {
-        padding-left: 2rem; /* px-8 */
-        padding-right: 2rem; /* px-8 */
-    }
-}
-
-@media (min-width: 1280px) { /* xl breakpoint */
-    h1 { font-size: 5rem; } /* text-8xl */
-    .hero-gradient-text { font-size: 4.5rem; } /* xl:text-7xl */
-}
-
-/* 10. Additional Components (Example for expansion) */
-
-/* Section Styling */
-.section {
-    padding: 4rem 0; /* py-16 */
-    text-align: center;
-}
-.section-title {
-    font-size: 2.5rem; /* text-4xl */
-    font-weight: 700;
-    margin-bottom: 2rem;
-    color: var(--foreground);
-}
-.section-subtitle {
-    font-size: 1.25rem; /* text-xl */
-    color: rgba(var(--foreground-rgb), 0.7);
-    margin-bottom: 3rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Card Styling */
-.card {
-    background-color: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 0.75rem; /* rounded-xl */
-    padding: 1.5rem; /* p-6 */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
-}
-html.dark .card {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.12);
-}
-html.dark .card:hover {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
-}
-
-.grid-cols-1 {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem; /* gap-6 */
-}
-@media (min-width: 640px) {
-    .grid-cols-2-sm {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media (min-width: 1024px) {
-    .grid-cols-3-lg {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* Footer Styling */
-.footer {
-    padding: 2rem 0; /* py-8 */
-    text-align: center;
-    border-top: 1px solid var(--border);
-    margin-top: 4rem; /* mt-16 */
-    color: var(--foreground);
-    font-size: 0.875rem; /* text-sm */
-    opacity: 0.7;
-}
-
-/* Helper for foreground-rgb */
-/* To make the rgba(var(--foreground-rgb), 0.8) work, we need to extract RGB values from oklch.
-   This is not directly possible with CSS variables for dynamic alpha.
-   A common workaround is to define --foreground-rgb directly if you need it,
-   or use a simpler approach like `color: var(--foreground); opacity: 0.8;`
-   For now, I'm assuming --foreground-rgb should be set somewhere for cases like the hero-bio,
-   or we adjust the approach to use opacity.
-   
-   Let's define --foreground-rgb for common use cases. */
-:root {
-    --foreground-rgb: 23, 23, 27; /* Approximate RGB for oklch(0.145 0 0) - dark grey */
-}
-html.dark {
-    --foreground-rgb: 251, 251, 251; /* Approximate RGB for oklch(0.985 0 0) - near white */
-}
-
-/* Ensure the hero-bio uses opacity */
-.hero-bio {
-    color: var(--foreground);
-    opacity: 0.8; /* Changed to use opacity directly */
-}
+/* Utilities, Responsive, and Animations (pulse, blob, bounce-arrow, etc.) as in previous script.css sample */
