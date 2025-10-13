@@ -2,41 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Karun Chakki | Tech, AI & Product Explorer</title>
-  <meta name="title" content="Karun Chakki | Tech, AI & Product Explorer" />
   <meta name="description" content="Portfolio of Karun Chakki – Driven by curiosity to build impactful solutions across tech and healthcare. GeeksforGeeks-certified Product Manager with expertise in IoT, embedded systems, AI/ML, and bioelectronics." />
-  <meta name="keywords" content="Karun Chakki, Portfolio, Product Manager, AI, ML, IoT, Embedded Systems, Bioelectronics, Healthcare Tech, Developer, Engineering, Tech Explorer, GeeksforGeeks, Frontend" />
+  <meta name="keywords" content="Karun Chakki, Portfolio, Product Manager, AI, ML, IoT, Embedded Systems, Bioelectronics, Healthcare Tech" />
   <meta name="author" content="Karun Chakki" />
 
+  <!-- Social Meta -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://yourportfolio.com/" />
   <meta property="og:title" content="Karun Chakki | Tech, AI & Product Explorer" />
-  <meta property="og:description" content="Portfolio of Karun Chakki – Driven by curiosity to build impactful solutions across tech and healthcare. GeeksforGeeks-certified Product Manager with expertise in IoT, embedded systems, AI/ML, and bioelectronics." />
-  <meta property="og:image" content="https://yourportfolio.com/images/og-image.jpg" />
+  <meta property="og:description" content="Portfolio of Karun Chakki – Driven by curiosity to build impactful solutions across tech and healthcare." />
+  <meta property="og:image" content="images/og-image.jpg" />
 
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://yourportfolio.com/" />
   <meta property="twitter:title" content="Karun Chakki | Tech, AI & Product Explorer" />
-  <meta property="twitter:description" content="Portfolio of Karun Chakki – Driven by curiosity to build impactful solutions across tech and healthcare. GeeksforGeeks-certified Product Manager with expertise in IoT, embedded systems, AI/ML, and bioelectronics." />
-  <meta property="twitter:image" content="https://yourportfolio.com/images/twitter-image.jpg" />
+  <meta property="twitter:description" content="Portfolio of Karun Chakki – Driven by curiosity to build impactful solutions." />
+  <meta property="twitter:image" content="images/twitter-image.jpg" />
 
+  <!-- Font -->
   <link rel="preload" href="https://rsms.me/inter/inter.css" as="style" crossorigin>
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 
+  <!-- CSS -->
   <link rel="stylesheet" href="script.css" />
 </head>
 <body>
   <!-- Header -->
   <header class="header" id="header">
     <nav class="nav-container container">
-      <div class="nav-brand">
-        <span class="gradient-text">Karun Chakki</span>
-      </div>
-
-      <div class="nav-links desktop-nav">
+      <div class="nav-brand gradient-text">Karun Chakki</div>
+      <div class="desktop-nav">
         <a href="#hero" class="nav-link">Home</a>
         <a href="#about" class="nav-link">About</a>
         <a href="#skills" class="nav-link">Skills</a>
@@ -44,413 +43,178 @@
         <a href="#education" class="nav-link">Education</a>
         <a href="#contact" class="nav-link">Contact</a>
       </div>
-
-      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
         <span class="theme-icon">🌙</span>
       </button>
-
-      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle mobile menu">
+      <button id="mobile-menu" class="mobile-menu-btn" aria-label="Toggle menu">
         <span class="hamburger"></span>
         <span class="hamburger"></span>
         <span class="hamburger"></span>
       </button>
     </nav>
-
     <div class="mobile-nav" id="mobile-nav">
-      <a href="#hero" class="mobile-nav-link">Home</a>
-      <a href="#about" class="mobile-nav-link">About</a>
-      <a href="#skills" class="mobile-nav-link">Skills</a>
-      <a href="#projects" class="mobile-nav-link">Projects</a>
-      <a href="#education" class="mobile-nav-link">Education</a>
-      <a href="#contact" class="mobile-nav-link">Contact</a>
+      <a href="#hero" class="mobile-link">Home</a>
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#skills" class="mobile-link">Skills</a>
+      <a href="#projects" class="mobile-link">Projects</a>
+      <a href="#education" class="mobile-link">Education</a>
+      <a href="#contact" class="mobile-link">Contact</a>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero section-padding" id="hero" aria-label="Hero">
-    <div class="hero-container">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1 class="hero-title">
-            Hi, I'm <span class="gradient-text">Karun Chakki</span>
-          </h1>
-          <p class="hero-subtitle">
-            Driven by curiosity to build impactful solutions across tech and healthcare.
-            <span class="gradient-text">GeeksforGeeks-certified Product Manager</span>
-            with expertise in IoT, embedded systems, AI/ML, and bioelectronics.
-          </p>
-          <div class="hero-buttons">
-            <a href="#projects" class="btn btn-primary">View My Work</a>
-            <a href="#contact" class="btn btn-outline">Get In Touch</a>
-          </div>
+  <!-- Hero Section -->
+  <section class="section hero" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <h1>Hi, I'm <span class="gradient-text">Karun Chakki</span></h1>
+        <p>Driven by curiosity to build impactful solutions across tech and healthcare. <span class="gradient-text">Product Manager</span> with expertise in IoT, embedded systems, AI/ML, and bioelectronics.</p>
+        <div class="buttons">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-outline">Get In Touch</a>
         </div>
       </div>
-
-      <div class="hero-image">
-        <div class="hero-img-wrapper">
-          <div class="hero-gradient-glow" aria-hidden="true"></div>
-          <div class="hero-ring" aria-hidden="true"></div>
-          <img src="images/profile.jpg" alt="Portrait of Karun Chakki" class="hero-img" />
-          <div class="available-badge" aria-label="Available for hire">Available for hire</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-scroll-indicator" aria-hidden="true">
-      <span class="scroll-arrow">↓</span>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section class="about-section section-padding" id="about" aria-label="About">
-    <div class="container">
-      <div class="section-header">
-        <h2>About Me</h2>
-        <p class="section-subtitle">Passionate about creating innovative solutions that make a difference</p>
-      </div>
-
-      <div class="about-content">
-        <div class="about-text">
-          <p>
-            As a recent B.Tech Bioelectronics Engineering graduate from REVA University, I've developed a unique perspective
-            that bridges technology and healthcare. The journey in product management began with a curiosity about how
-            technology can solve real-world problems and improve lives.
-          </p>
-          <p>
-            With certification from GeeksforGeeks in Product Management, skills in strategic thinking,
-            user research, and data-driven decision making have been honed. A technical background in bioelectronics offers
-            a deep understanding of both hardware and software systems, enabling effective collaboration across
-            multidisciplinary teams.
-          </p>
-        </div>
-
-        <div class="highlight-cards">
-          <div class="highlight-card">
-            <div class="highlight-icon">🎯</div>
-            <h3>Product Strategy</h3>
-            <p>Defining product vision and roadmaps that align with business goals</p>
-          </div>
-          <div class="highlight-card">
-            <div class="highlight-icon">🔬</div>
-            <h3>Technical Innovation</h3>
-            <p>Leveraging bioelectronics and AI/ML to create cutting-edge solutions</p>
-          </div>
-          <div class="highlight-card">
-            <div class="highlight-icon">👥</div>
-            <h3>Team Leadership</h3>
-            <p>Building and managing cross-functional teams for optimal results</p>
-          </div>
-          <div class="highlight-card">
-            <div class="highlight-icon">📊</div>
-            <h3>Data-Driven Decisions</h3>
-            <p>Using analytics and user insights to guide product development</p>
-          </div>
-        </div>
+      <div class="hero-image-wrapper">
+        <div class="hero-gradient-glow" aria-hidden="true"></div>
+        <div class="hero-ring" aria-hidden="true"></div>
+        <img src="images/profile.jpg" alt="Portrait of Karun Chakki" class="hero-img" />
+        <div class="available-badge">Available for hire</div>
+        <div class="scroll-indicator" aria-hidden="true">↓</div>
       </div>
     </div>
   </section>
 
-  <!-- Skills -->
-  <section class="skills-section section-padding" id="skills" aria-label="Skills and Expertise">
+  <!-- About Section -->
+  <section class="section" id="about">
     <div class="container">
-      <div class="section-header">
-        <h2>Skills & Expertise</h2>
-        <p class="section-subtitle">A comprehensive toolkit for modern product development</p>
-      </div>
+      <h2>About Me</h2>
+      <p>Bioelectronics graduate from REVA University with a passion for bridging tech and healthcare. Certified Product Manager, skilled in strategy, user research, and data analytics. Versatile in hardware & software, dedicated to impactful innovations.</p>
+    </div>
+  </section>
 
+  <!-- Skills Section -->
+  <section class="section" id="skills">
+    <div class="container">
+      <h2>Skills & Expertise</h2>
       <div class="skills-grid">
-        <div class="skill-category" data-category="product">
-          <div class="category-header">
-            <div class="category-icon product-icon">📊</div>
-            <h3>Product Management</h3>
-          </div>
-          <div class="skill-badges">
-            <span class="skill-badge">Product Strategy</span>
-            <span class="skill-badge">Roadmap Planning</span>
-            <span class="skill-badge">User Research</span>
-            <span class="skill-badge">PRD Writing</span>
-            <span class="skill-badge">Agile/Scrum</span>
-            <span class="skill-badge">A/B Testing</span>
-          </div>
+        <div class="skill-category">
+          <h3>Product Management</h3>
+          <ul>
+            <li>Product Strategy</li><li>Roadmap Planning</li><li>User Research</li><li>PRD Writing</li><li>Agile/Scrum</li><li>A/B Testing</li>
+          </ul>
         </div>
-
-        <div class="skill-category" data-category="software">
-          <div class="category-header">
-            <div class="category-icon software-icon">💻</div>
-            <h3>Software Development</h3>
-          </div>
-          <div class="skill-badges">
-            <span class="skill-badge">Python</span>
-            <span class="skill-badge">JavaScript</span>
-            <span class="skill-badge">React</span>
-            <span class="skill-badge">Node.js</span>
-            <span class="skill-badge">SQL</span>
-            <span class="skill-badge">Git</span>
-          </div>
+        <div class="skill-category">
+          <h3>Software Development</h3>
+          <ul>
+            <li>Python</li><li>JavaScript</li><li>React</li><li>Node.js</li><li>SQL</li><li>Git</li>
+          </ul>
         </div>
-
-        <div class="skill-category" data-category="hardware">
-          <div class="category-header">
-            <div class="category-icon hardware-icon">⚡</div>
-            <h3>Hardware & IoT</h3>
-          </div>
-          <div class="skill-badges">
-            <span class="skill-badge">Arduino</span>
-            <span class="skill-badge">Raspberry Pi</span>
-            <span class="skill-badge">PCB Design</span>
-            <span class="skill-badge">Sensor Integration</span>
-            <span class="skill-badge">Embedded C</span>
-            <span class="skill-badge">Circuit Analysis</span>
-          </div>
+        <div class="skill-category">
+          <h3>Hardware & IoT</h3>
+          <ul>
+            <li>Arduino</li><li>Raspberry Pi</li><li>PCB Design</li><li>Sensor Integration</li><li>Embedded C</li><li>Circuit Analysis</li>
+          </ul>
         </div>
-
-        <div class="skill-category" data-category="bio">
-          <div class="category-header">
-            <div class="category-icon bio-icon">🧬</div>
-            <h3>Bioelectronics & AI</h3>
-          </div>
-          <div class="skill-badges">
-            <span class="skill-badge">Biomedical Devices</span>
-            <span class="skill-badge">Signal Processing</span>
-            <span class="skill-badge">Machine Learning</span>
-            <span class="skill-badge">Data Analysis</span>
-            <span class="skill-badge">MATLAB</span>
-            <span class="skill-badge">Healthcare Tech</span>
-          </div>
+        <div class="skill-category">
+          <h3>Bioelectronics & AI</h3>
+          <ul>
+            <li>Biomedical Devices</li><li>Signal Processing</li><li>Machine Learning</li><li>Data Analysis</li><li>MATLAB</li><li>Healthcare Tech</li>
+          </ul>
         </div>
       </div>
     </div>
-
-    <div class="decorative-orb orb-1" aria-hidden="true"></div>
-    <div class="decorative-orb orb-2" aria-hidden="true"></div>
   </section>
 
   <!-- Projects -->
-  <section class="projects-section section-padding" id="projects" aria-label="Projects">
+  <section class="section" id="projects">
     <div class="container">
-      <div class="section-header">
-        <h2>Featured Projects</h2>
-        <p class="section-subtitle">Innovative solutions across healthcare, AI, and IoT</p>
+      <h2>Featured Projects</h2>
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="healthtech">HealthTech</button>
+        <button class="filter-btn" data-filter="ai">AI/ML</button>
+        <button class="filter-btn" data-filter="iot">IoT</button>
       </div>
-
-      <div class="project-filters" role="tablist" aria-label="Project Categories">
-        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Projects</button>
-        <button class="filter-btn" data-filter="healthtech" role="tab" aria-selected="false">HealthTech</button>
-        <button class="filter-btn" data-filter="ai" role="tab" aria-selected="false">AI/ML</button>
-        <button class="filter-btn" data-filter="iot" role="tab" aria-selected="false">IoT</button>
-      </div>
-
-      <div class="projects-grid" id="projects-grid">
-        <article class="project-card" data-category="healthtech">
-          <div class="project-icon">🏥</div>
-          <div class="project-content">
-            <div class="project-category">HealthTech</div>
-            <h3>Smart Health Monitoring System</h3>
-            <p>IoT-based patient monitoring solution with real-time alerts and data analytics for healthcare providers.</p>
-            <div class="project-tech">
-              <span class="tech-tag">Arduino</span>
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">IoT</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card" data-category="ai">
-          <div class="project-icon">🤖</div>
-          <div class="project-content">
-            <div class="project-category">AI/ML</div>
-            <h3>Medical Image Analysis Tool</h3>
-            <p>Machine learning model for automated detection of anomalies in medical imaging with 95% accuracy.</p>
-            <div class="project-tech">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">TensorFlow</span>
-              <span class="tech-tag">OpenCV</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card" data-category="iot">
-          <div class="project-icon">🌐</div>
-          <div class="project-content">
-            <div class="project-category">IoT</div>
-            <h3>Smart Agriculture System</h3>
-            <p>Automated irrigation and crop monitoring system using sensors and machine learning predictions.</p>
-            <div class="project-tech">
-              <span class="tech-tag">Raspberry Pi</span>
-              <span class="tech-tag">Sensors</span>
-              <span class="tech-tag">React</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card" data-category="healthtech">
-          <div class="project-icon">📱</div>
-          <div class="project-content">
-            <div class="project-category">HealthTech</div>
-            <h3>Telemedicine Platform</h3>
-            <p>Full-stack web application connecting patients with healthcare providers through secure video consultations.</p>
-            <div class="project-tech">
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">WebRTC</span>
-            </div>
-          </div>
-        </article>
+      <div class="projects-grid">
+        <div class="project-card" data-category="healthtech">
+          <h3>Health Monitoring System</h3>
+          <p>IoT-based health monitoring with real-time alerts.</p>
+        </div>
+        <div class="project-card" data-category="ai">
+          <h3>Medical Image Detection</h3>
+          <p>ML model for anomaly detection in medical images.</p>
+        </div>
+        <div class="project-card" data-category="iot">
+          <h3>Smart Agriculture</h3>
+          <p>Sensor-driven irrigation with predictive analytics.</p>
+        </div>
+        <div class="project-card" data-category="healthtech">
+          <h3>Telemedicine App</h3>
+          <p>Secure video consultations platform.</p>
+        </div>
       </div>
     </div>
-
-    <div class="decorative-orb orb-3" aria-hidden="true"></div>
-    <div class="decorative-orb orb-4" aria-hidden="true"></div>
   </section>
 
   <!-- Education -->
-  <section class="education-section section-padding" id="education" aria-label="Education">
+  <section class="section" id="education">
     <div class="container">
-      <div class="section-header">
-        <h2>Education</h2>
-        <p class="section-subtitle">Academic foundation in engineering and product management</p>
-      </div>
-
-      <article class="education-card">
-        <div class="education-icon">🎓</div>
-        <div class="education-content">
-          <h3>B.Tech in Bioelectronics Engineering</h3>
-          <p class="education-institution">REVA University, Bangalore</p>
-          <p class="education-description">
-            Specialized in the intersection of biology and electronics, focusing on medical device development,
-            signal processing, and biomedical instrumentation. Experience spans both hardware and software
-            aspects of bioelectronic systems.
-          </p>
-          <div class="education-date">2020 - 2024</div>
-        </div>
-      </article>
+      <h2>Education</h2>
+      <p>B.Tech Bioelectronics Engineering from REVA University, Bangalore (2020-2024). Focused on medical devices, signal processing, and bioelectronics systems.</p>
     </div>
   </section>
 
   <!-- Certifications -->
-  <section class="certifications-section section-padding" aria-label="Certifications">
+  <section class="section" id="certifications">
     <div class="container">
-      <div class="section-header">
-        <h2>Certifications</h2>
-        <p class="section-subtitle">Continuous learning and professional development</p>
-      </div>
-
-      <div class="certifications-grid">
-        <article class="certification-card">
-          <div class="certification-icon">🏆</div>
-          <div class="certification-content">
-            <h3>Product Management Certification</h3>
-            <p class="certification-issuer">GeeksforGeeks</p>
-            <p class="certification-description">
-              Comprehensive certification covering product strategy, user research,
-              agile methodologies, and data-driven decision making.
-            </p>
-            <div class="certification-skills">
-              <span class="skill-badge">Product Strategy</span>
-              <span class="skill-badge">User Research</span>
-              <span class="skill-badge">Agile</span>
-            </div>
-          </div>
-        </article>
-      </div>
+      <h2>Certifications</h2>
+      <ul>
+        <li>Product Management – GeeksforGeeks</li>
+      </ul>
     </div>
   </section>
 
   <!-- Contact -->
-  <section class="contact-section section-padding" id="contact" aria-label="Contact">
+  <section class="section" id="contact">
     <div class="container">
-      <div class="section-header">
-        <h2>Let's Connect</h2>
-        <p class="section-subtitle">Ready to collaborate on your next project</p>
+      <h2>Let's Connect</h2>
+      <div class="contact-cards">
+        <div><strong>Email:</strong> <a href="mailto:karun@example.com">karun@example.com</a></div>
+        <div><strong>Phone:</strong> <a href="tel:+919876543210">+91 98765 43210</a></div>
+        <div><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/karun-chakki" target="_blank" rel="noopener">linkedin.com/in/karun-chakki</a></div>
+        <div><strong>GitHub:</strong> <a href="https://github.com/karun-chakki" target="_blank" rel="noopener">github.com/karun-chakki</a></div>
       </div>
-
-      <div class="contact-content">
-        <div class="contact-methods">
-          <div class="contact-card">
-            <div class="contact-icon email-icon">📧</div>
-            <div class="contact-info">
-              <h3>Email</h3>
-              <a href="mailto:karun@example.com">karun@example.com</a>
-            </div>
-          </div>
-
-          <div class="contact-card">
-            <div class="contact-icon phone-icon">📱</div>
-            <div class="contact-info">
-              <h3>Phone</h3>
-              <a href="tel:+919876543210">+91 98765 43210</a>
-            </div>
-          </div>
-
-          <div class="contact-card">
-            <div class="contact-icon linkedin-icon">💼</div>
-            <div class="contact-info">
-              <h3>LinkedIn</h3>
-              <a href="https://linkedin.com/in/karun-chakki" target="_blank" rel="noopener">linkedin.com/in/karun-chakki</a>
-            </div>
-          </div>
-
-          <div class="contact-card">
-            <div class="contact-icon github-icon">🐙</div>
-            <div class="contact-info">
-              <h3>GitHub</h3>
-              <a href="https://github.com/karun-chakki" target="_blank" rel="noopener">github.com/karun-chakki</a>
-            </div>
-          </div>
-        </div>
-
-        <aside class="cta-card" aria-label="Call to action">
-          <div class="cta-content">
-            <h3>Ready to Start a Project?</h3>
-            <p>Always excited to work on innovative projects that make a difference. Let's discuss how to bring your ideas to life.</p>
-            <div class="cta-buttons">
-              <a href="mailto:karun@example.com" class="btn btn-primary">Send Email</a>
-              <a href="#" class="btn btn-outline">Download Resume</a>
-            </div>
-          </div>
-        </aside>
+      <div class="cta-card">
+        <h3>Start a Project</h3>
+        <p>Excited to collaborate! Contact now to bring ideas to life.</p>
+        <a href="mailto:karun@example.com" class="btn btn-primary">Send Email</a>
+        <a href="#" class="btn btn-outline">Download Resume</a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer" aria-label="Footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3 class="gradient-text">Karun Chakki</h3>
-          <p>Building innovative solutions at the intersection of technology and healthcare.</p>
-        </div>
-
-        <div class="footer-section">
-          <h4>Quick Links</h4>
-          <div class="footer-links">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </div>
-
-        <div class="footer-section">
-          <h4>Connect</h4>
-          <div class="social-links">
-            <a href="https://linkedin.com/in/karun-chakki" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <span class="social-icon">💼</span>
-            </a>
-            <a href="https://github.com/karun-chakki" target="_blank" rel="noopener" aria-label="GitHub">
-              <span class="social-icon">🐙</span>
-            </a>
-          </div>
-        </div>
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h3 class="gradient-text">Karun Chakki</h3>
+        <p>Innovating at the intersection of tech and healthcare.</p>
       </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2024 Karun Chakki. Made with <span class="heart">❤️</span> and passion for innovation.</p>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <a href="#about">About</a> <a href="#skills">Skills</a> <a href="#projects">Projects</a> <a href="#contact">Contact</a>
       </div>
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <a href="https://linkedin.com/in/karun-chakki" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/karun-chakki" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Karun Chakki. Made with <span class="heart">❤️</span></p>
     </div>
   </footer>
 
+  <!-- JS -->
   <script src="script.js"></script>
 </body>
 </html>
