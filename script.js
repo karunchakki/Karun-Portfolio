@@ -1,96 +1,79 @@
-// script.js - Interactions for Karun Chakki portfolio
-
 (function() {
-  const html = document.documentElement;
+  // Theme toggle
+  const themeBtn = document.getElementById('theme-toggle');
+  const htmlEl = document.documentElement;
+  const storedTheme = localStorage.getItem('theme');
+  if (storedTheme === 'dark') {
+    htmlEl.classList.add('dark');
+  } else {
+    htmlEl.classList.remove('dark');
+  }
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+      document.querySelector('.theme-icon').textContent = htmlEl.classList.contains('dark') ? '☀️' : '🌙';
+    });
+  }
+
+  // Header scroll effect
   const header = document.getElementById('header');
-  const themeToggle = document.getElementById('theme-toggle');
-  const mobileBtn = document.getElementById('mobile-menu-btn');
-  const mobileNav = document.getElementById('mobile-nav');
-
-  // Dark Mode Management
-  const THEME_KEY = 'karun-theme';
-  function getPreferredTheme() {
-    const stored = localStorage.getItem(THEME_KEY);
-    if (stored === 'dark' || stored === 'light') return stored;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
-  function applyTheme(theme) {
-    if (theme === 'dark') html.classList.add('dark');
-    else html.classList.remove('dark');
-    if (themeToggle) themeToggle.querySelector('.theme-icon').textContent = theme === 'dark' ? '🌞' : '🌙';
-  }
-  function setTheme(theme) {
-    localStorage.setItem(THEME_KEY, theme);
-    applyTheme(theme);
-  }
-  applyTheme(getPreferredTheme());
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const next = html.classList.contains('dark') ? 'light' : 'dark';
-      setTheme(next);
-    });
-  }
-  if (window.matchMedia) {
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      const stored = localStorage.getItem(THEME_KEY);
-      if (stored !== 'dark' && stored !== 'light') {
-        applyTheme(e.matches ? 'dark' : 'light');
-      }
-    });
-  }
-
-  // Header Scroll State
-  function onScroll() {
-    if (!header) return;
-    const scrolled = window.scrollY > 50;
-    header.classList.toggle('scrolled', scrolled);
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  // Smooth scroll for nav links
-  function handleAnchorClick(e) {
-    const href = this.getAttribute('href');
-    if (href && href.startsWith('#')) {
-      const target = document.querySelector(href);
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
-        if (mobileNav) mobileNav.classList.remove('open');
-      }
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
     }
-  }
-  document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', handleAnchorClick));
+  });
 
-  // Mobile Menu
+  // Mobile menu toggle
+  const mobileBtn = document.getElementById('mobile-menu');
+  const mobileNav = document.getElementById('mobile-nav');
   if (mobileBtn && mobileNav) {
     mobileBtn.addEventListener('click', () => {
       mobileNav.classList.toggle('open');
     });
   }
 
-  // Project filter buttons
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
-  filterButtons.forEach(btn => btn.addEventListener('click', function() {
-    const filter = btn.getAttribute('data-filter');
-    filterButtons.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    projectCards.forEach(card => {
-      const cat = card.getAttribute('data-category');
-      card.style.display = (filter === 'all' || cat === filter) ? 'block' : 'none';
+  // Smooth scrolling for `<a>` links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({behavior:'smooth'});
+        // Close menu on mobile
+        document.getElementById('mobile-nav').classList.remove('open');
+      }
     });
-  }));
+  });
 
-  // Intersection reveal animation stub (add 'reveal' class if you want intersection fade-ins!)
+  // Project filtering
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.project-card').forEach(card => {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Intersection observer for reveal effects (optional)
+  // Add class 'reveal' to elements you want to fade in
   const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
+  const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('revealed');
-        io.unobserve(entry.target);
+        observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.12 });
-  revealEls.forEach(el => io.observe(el));
+  revealEls.forEach(el => observer.observe(el));
 })();
